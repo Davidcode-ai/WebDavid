@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDavid | Desarrollo Web A Medida & WordPress</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0B0F19',
+                            800: '#111827',
+                            700: '#1F2937',
+                        },
+                        brand: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    },
+                    animation: {
+                        'scroll': 'scroll 40s linear infinite',
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        'scroll': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(calc(-250px * 7))' }
+                        },
+                        'blob': {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F19; color: #e2e8f0; }
+        
+        /* Fondo Grid */
+        .bg-grid {
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+        
+        /* Estilo Cristal */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Máscara para el carrusel (el fade de los lados) */
+        .marquee-mask {
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-card border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="font-display font-bold text-2xl tracking-tight text-white flex items-center gap-2">
+                    <span class="text-brand-400">&lt;/&gt;</span> WebDavid
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition">Trabajos</a>
+                    <a href="#servicios" class="text-gray-400 hover:text-white transition">Servicios</a>
+                    <a href="#pricing" class="text-gray-400 hover:text-white transition">Precios</a>
+                    <a href="https://wa.me/34600000000" class="bg-white text-dark-900 px-6 py-2.5 rounded-full font-bold hover:bg-brand-400 transition hover:scale-105 shadow-lg shadow-brand-500/20">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 -z-10 bg-grid opacity-20"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800 border border-gray-700 text-sm text-gray-300 mb-8">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Webs a Medida o WordPress
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Tu negocio merece <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">destacar en internet.</span>
+            </h1>
+            
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-400 mb-10 leading-relaxed">
+                Ni plantillas rotas ni precios abusivos. Diseño webs rápidas con código puro o autogestionables con WordPress. Tú decides el control que necesitas.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="toggleChat()" class="px-8 py-4 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/25 ring-2 ring-brand-500 ring-offset-2 ring-offset-dark-900">
+                    Calcula tu Presupuesto
+                </button>
+                <a href="#portfolio" class="px-8 py-4 bg-gray-800 text-white border border-gray-700 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-eye"></i> Ver Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark-800 border-y border-gray-800 py-10 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 marquee-mask"> <div class="flex w-[calc(250px*14)] animate-scroll">
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-wordpress text-4xl"></i> <span class="font-bold text-xl">WordPress</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-brand-400 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-react text-4xl"></i> <span class="font-bold text-xl">React</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-orange-500 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-html5 text-4xl"></i> <span class="font-bold text-xl">HTML5</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-pink-500 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-elementor text-4xl"></i> <span class="font-bold text-xl">Elementor</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-indigo-400 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-stripe text-4xl"></i> <span class="font-bold text-xl">Stripe</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-blue-500 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-css3-alt text-4xl"></i> <span class="font-bold text-xl">Tailwind</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-google text-4xl"></i> <span class="font-bold text-xl">SEO</span>
+                </div>
+
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-wordpress text-4xl"></i> <span class="font-bold text-xl">WordPress</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-brand-400 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-react text-4xl"></i> <span class="font-bold text-xl">React</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-orange-500 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-html5 text-4xl"></i> <span class="font-bold text-xl">HTML5</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-pink-500 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-elementor text-4xl"></i> <span class="font-bold text-xl">Elementor</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-indigo-400 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-stripe text-4xl"></i> <span class="font-bold text-xl">Stripe</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-blue-500 transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-css3-alt text-4xl"></i> <span class="font-bold text-xl">Tailwind</span>
+                </div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0">
+                    <i class="fa-brands fa-google text-4xl"></i> <span class="font-bold text-xl">SEO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-white mb-4">¿Código Puro o WordPress?</h2>
+                <p class="text-gray-400">Me adapto a lo que necesite tu negocio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+                
+                <div class="md:col-span-2 bg-gray-800 rounded-3xl p-8 border border-gray-700 relative overflow-hidden group hover:border-brand-500 transition duration-500" data-aos="fade-right">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition text-9xl text-white"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Opción A: Código Puro</h3>
+                    <p class="text-gray-400 max-w-md">Si quieres que tu web vuele y no quieres preocuparte de actualizaciones ni virus. Programo en HTML/CSS a medida.</p>
+                    <div class="mt-8 flex gap-2">
+                        <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded border border-green-500/20">Carga en 0.5s</span>
+                        <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded border border-blue-500/20">0 Mantenimiento</span>
+                    </div>
+                </div>
+
+                <div class="md:row-span-2 bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 flex flex-col justify-between hover:border-pink-500 transition duration-500" data-aos="fade-left">
+                    <div>
+                        <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center text-white mb-6 text-xl"><i class="fa-brands fa-wordpress"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Opción B: Autogestionable</h3>
+                        <p class="text-gray-400">¿Quieres cambiar textos o fotos tú mismo? Te instalo WordPress + Elementor y te enseño a usarlo en 1 hora.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-50 mt-4 grayscale group-hover:grayscale-0 transition">
+                </div>
+
+                <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-white mb-2">Google Friendly</h3>
+                    <p class="text-gray-400 text-sm">Ya sea código o WordPress, estructura optimizada para aparecer en Google.</p>
+                    <div class="mt-4 text-brand-400 text-2xl"><i class="fa-brands fa-google"></i></div>
+                </div>
+
+                <div class="bg-gray-800 rounded-3xl p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-white mb-2">Diseño Móvil</h3>
+                    <p class="text-gray-400 text-sm">El 80% de tus visitas serán desde móvil. Tu web se verá perfecta.</p>
+                    <div class="mt-4 text-brand-400 text-2xl"><i class="fa-solid fa-mobile-screen"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-dark-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-display text-4xl font-bold text-white mb-12 text-center">Proyectos Recientes</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group relative" data-aos="zoom-in-up">
+                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900">
+                        <img src="https://via.placeholder.com/800x600/111827/ffffff?text=Web+Inmobiliaria" class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">Inmobiliaria Deluxe</h3>
+                            <p class="text-gray-400 mt-2">Web autogestionable para subir propiedades.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="text-xs font-mono text-pink-400 bg-pink-400/10 px-2 py-1 rounded">WordPress</span>
+                                <span class="text-xs font-mono text-pink-400 bg-pink-400/10 px-2 py-1 rounded">Elementor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900">
+                        <img src="https://via.placeholder.com/800x600/0B0F19/ffffff?text=Landing+App" class="w-full h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white">Lanzamiento App</h3>
+                            <p class="text-gray-400 mt-2">Landing page de alta velocidad para captar leads.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="text-xs font-mono text-brand-400 bg-brand-400/10 px-2 py-1 rounded">HTML5 Puro</span>
+                                <span class="text-xs font-mono text-brand-400 bg-brand-400/10 px-2 py-1 rounded">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-display text-4xl font-bold text-center text-white mb-4">Planes Flexibles</h2>
+            <p class="text-center text-gray-400 mb-16">Tú eliges: Código para velocidad o CMS para gestión.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-gray-500 transition flex flex-col" data-aos="fade-up">
+                    <div>
+                        <span class="bg-blue-900 text-blue-300 text-xs font-bold px-2 py-1 rounded">RECOMENDADO CÓDIGO</span>
+                        <h3 class="text-xl font-bold text-white mt-4">Landing Page</h3>
+                        <div class="my-4 text-4xl font-bold text-white">190€</div>
+                        <p class="text-gray-400 text-sm mb-6">Ideal para campañas de anuncios o validar ideas.</p>
+                        <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-400"></i> <strong>Programación a medida</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Una sola página (One-Page)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Carga instantánea</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Sin mantenimiento</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero la Landing en código" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition">Elegir</a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-3xl border-2 border-brand-500 relative transform md:-translate-y-4 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">POPULAR</div>
+                    <span class="bg-pink-900 text-pink-300 text-xs font-bold px-2 py-1 rounded w-fit mt-2">WORDPRESS / ELEMENTOR</span>
+                    <h3 class="text-xl font-bold text-white mt-2">Web Corporativa</h3>
+                    <div class="my-4 text-4xl font-bold text-white">350€</div>
+                    <p class="text-gray-400 text-sm mb-6">Para negocios que quieren publicar contenido.</p>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-pen-to-square text-brand-400"></i> <strong>Autogestionable</strong></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Hasta 5 secciones</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Blog / Noticias</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Tutorial de uso incluido</li>
+                    </ul>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero la Web Corporativa en WP" class="mt-auto block text-center w-full py-3 bg-brand-500 rounded-xl text-white font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/30">Elegir</a>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-gray-500 transition flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <span class="bg-purple-900 text-purple-300 text-xs font-bold px-2 py-1 rounded w-fit">ECOMMERCE</span>
+                    <h3 class="text-xl font-bold text-white mt-4">Tienda Online</h3>
+                    <div class="my-4 text-4xl font-bold text-white">Consultar</div>
+                    <p class="text-gray-400 text-sm mb-6">Vende productos con pasarela de pago.</p>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                        <li class="flex items-center gap-2"><i class="fa-brands fa-wordpress text-brand-400"></i> <strong>WooCommerce / Shopify</strong></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Catálogo de productos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Pagos con Tarjeta/PayPal</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Panel de gestión de pedidos</li>
+                    </ul>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero una Tienda Online" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800 bg-dark-900 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="text-2xl font-bold text-white mb-4">WebDavid.es</h2>
+                    <p class="text-gray-400 text-sm max-w-xs">
+                        Diseño y desarrollo web a medida para negocios que buscan resultados reales.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#servicios" class="hover:text-brand-400">Desarrollo Web</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-400">WordPress</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-400">Tiendas Online</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="aviso-legal.html" class="hover:text-brand-400">Aviso Legal</a></li>
+                        <li><a href="politica-privacidad.html" class="hover:text-brand-400">Política de Privacidad</a></li>
+                        <li><a href="politica-cookies.html" class="hover:text-brand-400">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2026 WebDavid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="toggleChat()" class="fixed bottom-6 right-6 bg-brand-500 hover:bg-brand-600 text-white p-4 rounded-full shadow-lg shadow-brand-500/40 z-50 transition-all hover:scale-110 group animate-bounce">
+        <i class="fa-solid fa-comment-dots text-2xl group-hover:hidden"></i>
+        <i class="fa-solid fa-xmark text-2xl hidden group-hover:block"></i>
+    </button>
+
+    <div id="chatWindow" class="fixed bottom-24 right-6 w-80 md:w-96 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 z-50 hidden transform transition-all origin-bottom-right">
+        <div class="bg-brand-600 p-4 rounded-t-2xl flex items-center gap-3">
+            <div class="relative">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 font-bold">D</div>
+                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-brand-600 rounded-full"></div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm">David - Web Designer</h4>
+                <p class="text-blue-100 text-xs">En línea ahora</p>
+            </div>
+        </div>
+
+        <div id="chatBody" class="p-4 h-80 overflow-y-auto bg-gray-900 space-y-4">
+            <div class="chat-enter flex gap-2">
+                <div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">
+                    👋 ¡Hola! ¿Buscas código a medida o WordPress autogestionable?
+                </div>
+            </div>
+            <div id="step1" class="flex flex-col gap-2 ml-8">
+                <button onclick="nextStep(1, 190, 'Landing Page (Código)')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition">⚡ Landing Page Rápida (Código)</button>
+                <button onclick="nextStep(1, 350, 'Corporativa (WordPress)')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition">📝 Web Autogestionable (WP)</button>
+                <button onclick="nextStep(1, 0, 'Tienda Online')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition">🛍️ Tienda Online</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        let presupuesto = 0;
+        let resumen = "";
+
+        function toggleChat() {
+            document.getElementById('chatWindow').classList.toggle('hidden');
+        }
+
+        function addMessage(text, isUser = false) {
+            const chatBody = document.getElementById('chatBody');
+            const div = document.createElement('div');
+            div.className = `flex gap-2 ${isUser ? 'justify-end' : ''}`;
+            div.innerHTML = isUser 
+                ? `<div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%]">${text}</div>`
+                : `<div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">${text}</div>`;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function nextStep(step, price, text) {
+            const buttons = document.querySelector(`#step${step}`);
+            if(buttons) buttons.style.display = 'none';
+            presupuesto += price;
+            resumen += `- ${text}\n`;
+            addMessage(text, true);
+
+            setTimeout(() => {
+                if (step === 1) {
+                    addMessage("¿Tienes logotipo y textos preparados?");
+                    const options = `
+                        <div id="step2" class="flex flex-col gap-2 ml-8 mt-2">
+                            <button onclick="finishChat(0, 'Sí, tengo todo')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left">✅ Sí</button>
+                            <button onclick="finishChat(100, 'Necesito ayuda')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left">❌ No (+100€)</button>
+                        </div>`;
+                    document.getElementById('chatBody').insertAdjacentHTML('beforeend', options);
+                    document.getElementById('chatBody').scrollTop = document.getElementById('chatBody').scrollHeight;
+                } 
+            }, 600);
+        }
+
+        function finishChat(price, text) {
+            document.querySelector(`#step2`).style.display = 'none';
+            presupuesto += price;
+            resumen += `- ${text}`;
+            addMessage(text, true);
+            
+            setTimeout(() => {
+                let msgPrecio = presupuesto > 0 ? `${presupuesto}€` : "A consultar";
+                addMessage(`💰 <strong>Estimación: ${msgPrecio}</strong>`);
+                
+                const finalMsg = `Hola David, busco:%0A${encodeURIComponent(resumen)}%0A----------------%0APrecio estimado: ${msgPrecio}`;
+                
+                // AQUÍ ESTÁ EL CAMBIO LEGAL IMPORTANTE:
+                const cta = `
+                    <div class="mt-4 text-center">
+                        <p class="text-[10px] text-gray-400 mb-2">
+                            Al contactar, aceptas nuestra <a href="politica-privacidad.html" target="_blank" class="underline hover:text-white">Política de Privacidad</a>.
+                        </p>
+                        <a href="https://wa.me/34600000000?text=${finalMsg}" target="_blank" class="inline-block bg-green-500 text-white font-bold py-2 px-4 rounded-full animate-pulse">
+                            <i class="fa-brands fa-whatsapp"></i> Hablar con David
+                        </a>
+                    </div>`;
+                
+                document.getElementById('chatBody').insertAdjacentHTML('beforeend', cta);
+                document.getElementById('chatBody').scrollTop = document.getElementById('chatBody').scrollHeight;
+            }, 800);
+        }
+    </script>
+    <div id="cookieBanner" class="fixed bottom-4 right-4 max-w-md w-full bg-gray-900/95 backdrop-blur-xl border border-gray-700 rounded-2xl p-6 shadow-2xl z-[60] hidden transform transition-all duration-500 translate-y-10 opacity-0">
+        <div class="flex items-start gap-4">
+            <div class="text-3xl">🍪</div>
+            <div class="flex-1">
+                <h4 class="text-white font-bold mb-2">Configuración de Cookies</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Usamos cookies propias y de terceros para analizar el tráfico y recordar tus preferencias. Puedes aceptar todas o configurar tus preferencias.
+                    <a href="politica-cookies.html" class="text-brand-400 underline hover:text-brand-300">Ver Política</a>.
+                </p>
+                <div class="flex gap-3">
+                    <button onclick="acceptCookies()" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white py-2.5 rounded-xl font-bold text-sm transition shadow-lg shadow-brand-600/20">
+                        Aceptar Todas
+                    </button>
+                    <button onclick="rejectCookies()" class="px-4 py-2.5 border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white rounded-xl text-sm font-medium transition">
+                        Solo Esenciales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lógica Cookies Profesional (VERSIÓN RÁPIDA)
+        // Cambiamos 'load' por 'DOMContentLoaded' para que no espere a las imágenes
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('cookiesConsent')) {
+                const banner = document.getElementById('cookieBanner');
+                banner.classList.remove('hidden');
+                
+                // Reducimos el delay de animación de 100ms a 10ms
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-10', 'opacity-0');
+                }, 10);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesConsent', 'accepted');
+            closeBanner();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookiesConsent', 'rejected');
+            closeBanner();
+        }
+
+        function closeBanner() {
+            const banner = document.getElementById('cookieBanner');
+            banner.classList.add('translate-y-10', 'opacity-0');
+            setTimeout(() => banner.classList.add('hidden'), 500);
+        }
+    </script>
+</body>
+</html>
