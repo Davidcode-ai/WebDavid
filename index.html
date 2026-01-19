@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WebDavid | Diseño Web para Negocios</title>
+    
+    <title>WebDavid | Diseño Web Freelance Profesional y Barato (Desde 180€)</title>
+    <meta name="description" content="Diseño de páginas web modernas, rápidas y económicas para autónomos y PYMES en España. Especialista en WordPress, Tiendas Online y SEO Local. ¡Pide tu presupuesto gratis en 1 minuto!">
+    <meta name="keywords" content="diseño web barato, freelance web españa, crear pagina web wordpress, seo local, tienda online economica, webdavid, programador web">
+    <meta name="author" content="David - WebDavid.es">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://webdavid.es/">
+
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WebDavid | Tu Web Profesional por 180€">
+    <meta property="og:description" content="Deja de perder clientes. Diseño webs que venden. Entra y calcula tu precio al instante.">
+    <meta property="og:url" content="https://webdavid.es/">
+    <meta property="og:site_name" content="WebDavid">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "WebDavid",
+      "image": "https://webdavid.es/logo.png",
+      "@id": "https://webdavid.es",
+      "url": "https://webdavid.es",
+      "telephone": "+34600000000",
+      "priceRange": "180€-800€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.416775,
+        "longitude": -3.703790
+      },
+      "description": "Servicios de diseño y desarrollo web a medida para pequeños negocios y autónomos. Especialistas en WordPress y SEO.",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,16 +60,8 @@
                         display: ['Space Grotesk', 'sans-serif']
                     },
                     colors: {
-                        dark: {
-                            900: '#0B0F19',
-                            800: '#111827',
-                            700: '#1F2937',
-                        },
-                        brand: {
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                        }
+                        dark: { 900: '#0B0F19', 800: '#111827', 700: '#1F2937' },
+                        brand: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' }
                     },
                     animation: {
                         'scroll': 'scroll 30s linear infinite',
@@ -36,10 +69,7 @@
                         'bounce-short': 'bounce-short 1s infinite',
                     },
                     keyframes: {
-                        'scroll': {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(calc(-250px * 7))' }
-                        },
+                        'scroll': { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(calc(-250px * 7))' } },
                         'blob': {
                             '0%': { transform: 'translate(0px, 0px) scale(1)' },
                             '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
@@ -57,41 +87,14 @@
     </script>
     <style>
         body { background-color: #0B0F19; color: #e2e8f0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        
-        .glass-card {
-            background: rgba(11, 15, 25, 0.95);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .marquee-mask {
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-        }
-
-        .typing-dot {
-            width: 6px;
-            height: 6px;
-            background-color: #94a3b8;
-            border-radius: 50%;
-            animation: typing 1.4s infinite ease-in-out both;
-        }
+        .glass-card { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .marquee-mask { mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
+        .typing-dot { width: 6px; height: 6px; background-color: #94a3b8; border-radius: 50%; animation: typing 1.4s infinite ease-in-out both; }
         .typing-dot:nth-child(1) { animation-delay: -0.32s; }
         .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
-        
-        .message-enter {
-            animation: slideIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        @keyframes slideIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+        .message-enter { animation: slideIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards; opacity: 0; transform: translateY(10px); }
+        @keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-500 selection:text-white">
@@ -102,31 +105,24 @@
                 <a href="#" class="font-display font-bold text-2xl tracking-tight text-white flex items-center gap-2 z-50">
                     <span class="text-brand-400">&lt;/&gt;</span> WebDavid
                 </a>
-                
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#servicios" class="text-gray-400 hover:text-white transition font-medium text-sm uppercase tracking-wider">Servicios</a>
                     <a href="#portfolio" class="text-gray-400 hover:text-white transition font-medium text-sm uppercase tracking-wider">Trabajos</a>
                     <a href="#pricing" class="text-gray-400 hover:text-white transition font-medium text-sm uppercase tracking-wider">Precios</a>
-                    <a href="https://wa.me/34600000000" class="bg-white text-dark-900 px-6 py-2.5 rounded-full font-bold hover:bg-brand-400 transition hover:scale-105 shadow-lg shadow-brand-500/20 text-sm">
-                        Contactar
-                    </a>
+                    <a href="https://wa.me/34600000000" class="bg-white text-dark-900 px-6 py-2.5 rounded-full font-bold hover:bg-brand-400 transition hover:scale-105 shadow-lg shadow-brand-500/20 text-sm">Contactar</a>
                 </div>
-
                 <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2 focus:outline-none z-50">
                     <i class="fa-solid fa-bars transition-transform duration-300"></i>
                 </button>
             </div>
         </div>
-
         <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-[#0B0F19] border-b border-gray-800 shadow-2xl md:hidden transform -translate-y-[150%] transition-transform duration-300 ease-in-out -z-10">
             <div class="flex flex-col items-center py-8 space-y-8">
                 <a href="#servicios" onclick="toggleMenu()" class="text-xl text-white font-bold hover:text-brand-400 tracking-wide">SERVICIOS</a>
                 <a href="#portfolio" onclick="toggleMenu()" class="text-xl text-white font-bold hover:text-brand-400 tracking-wide">TRABAJOS</a>
                 <a href="#pricing" onclick="toggleMenu()" class="text-xl text-white font-bold hover:text-brand-400 tracking-wide">PRECIOS</a>
                 <div class="w-16 h-px bg-gray-800"></div>
-                <a href="https://wa.me/34600000000" class="bg-brand-600 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
-                </a>
+                <a href="https://wa.me/34600000000" class="bg-brand-600 text-white px-8 py-3 rounded-xl font-bold text-lg shadow-lg flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             </div>
         </div>
     </nav>
@@ -138,16 +134,16 @@
         <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-800 border border-gray-700 text-xs md:text-sm text-gray-300 mb-6 md:mb-8">
                 <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                Webs para Electricistas, Psicólogos, Tiendas...
+                Webs para Electricistas, Psicólogos, Tiendas y PYMES
             </div>
             
             <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Tu negocio necesita <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">vender más.</span>
+                Diseño Web que <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">hace crecer tu negocio.</span>
             </h1>
             
             <p class="mt-4 md:mt-6 max-w-2xl mx-auto text-base md:text-xl text-gray-400 mb-8 md:mb-10 leading-relaxed px-2">
-                Digitalizo tu negocio local. Desde una web rápida para que te llamen, hasta una presencia completa en Google para destacar.
+                <strong>Diseño Web Freelance en España.</strong> Webs rápidas con código puro o autogestionables con WordPress. Calidad de agencia a precio de autónomo.
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4 px-2">
@@ -188,9 +184,7 @@
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">¿Código o CMS?</h2>
                 <p class="text-gray-400">Me adapto a lo que necesite tu negocio.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-[300px]">
-                
                 <div class="md:col-span-2 bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 relative overflow-hidden group hover:border-brand-500 transition duration-500" data-aos="fade-up">
                     <div class="absolute top-0 right-0 p-4 md:p-8 opacity-10 group-hover:opacity-20 transition text-7xl md:text-9xl text-white"><i class="fa-solid fa-code"></i></div>
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Opción A: Código Puro</h3>
@@ -200,25 +194,22 @@
                         <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded border border-blue-500/20">0 Mantenimiento</span>
                     </div>
                 </div>
-
                 <div class="md:row-span-2 bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-6 md:p-8 border border-gray-700 flex flex-col justify-between hover:border-pink-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center text-white mb-6 text-xl"><i class="fa-brands fa-wordpress"></i></div>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Opción B: WordPress</h3>
                         <p class="text-gray-400 text-sm md:text-base leading-relaxed">¿Necesitas blog o cambiar textos tú mismo? Te instalo Panel de Control y Elementor.</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-50 mt-4 grayscale group-hover:grayscale-0 transition w-full object-cover h-32 md:h-auto">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-50 mt-4 grayscale group-hover:grayscale-0 transition w-full object-cover h-32 md:h-auto" alt="Panel de control WordPress" loading="lazy">
                 </div>
-
                 <div class="bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up">
                     <h3 class="text-lg md:text-xl font-bold text-white mb-2">Google Friendly</h3>
-                    <p class="text-gray-400 text-sm">Estructura SEO optimizada.</p>
+                    <p class="text-gray-400 text-sm">Estructura SEO optimizada para que te encuentren.</p>
                     <div class="mt-4 text-brand-400 text-2xl"><i class="fa-brands fa-google"></i></div>
                 </div>
-
                 <div class="bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-lg md:text-xl font-bold text-white mb-2">100% Móvil</h3>
-                    <p class="text-gray-400 text-sm">Se verá perfecta en iPhone.</p>
+                    <p class="text-gray-400 text-sm">Se verá perfecta en iPhone y Android.</p>
                     <div class="mt-4 text-brand-400 text-2xl"><i class="fa-solid fa-mobile-screen"></i></div>
                 </div>
             </div>
@@ -231,7 +222,7 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="group relative" data-aos="fade-up">
                     <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500" alt="Diseño web para electricista" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                         <div class="absolute bottom-0 left-0 p-6">
                             <h3 class="text-xl font-bold text-white">Electricidad Urgente 24h</h3>
@@ -245,7 +236,7 @@
                 </div>
                 <div class="group relative" data-aos="fade-up" data-aos-delay="100">
                     <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500" alt="Web para clínica de psicología" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
                         <div class="absolute bottom-0 left-0 p-6">
                             <h3 class="text-xl font-bold text-white">Clínica Psicología</h3>
@@ -328,7 +319,6 @@
                         Ayudando a autónomos y pequeños negocios a tener una presencia digital profesional sin arruinarse.
                     </p>
                 </div>
-                
                 <div class="text-center">
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Servicios</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
@@ -337,7 +327,6 @@
                         <li><a href="#servicios" class="hover:text-brand-400 transition">Tiendas Online</a></li>
                     </ul>
                 </div>
-
                 <div class="text-center md:text-right">
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Legal</h4>
                     <ul class="space-y-3 text-sm text-gray-400">
@@ -347,7 +336,6 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-600 text-xs">© 2026 WebDavid - Todos los derechos reservados.</p>
             </div>
@@ -360,7 +348,6 @@
     </button>
 
     <div id="chatWindow" class="fixed bottom-24 left-4 right-4 md:left-auto md:right-6 md:w-96 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 z-50 hidden transform transition-all origin-bottom-right flex flex-col max-h-[60vh] md:max-h-[500px]">
-        
         <div class="bg-brand-600 p-4 rounded-t-2xl flex justify-between items-center shrink-0">
             <div class="flex items-center gap-3">
                 <div class="relative">
@@ -374,7 +361,6 @@
             </div>
             <button onclick="resetChat()" class="text-white hover:text-blue-200 transition p-2"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
-
         <div id="chatBody" class="p-4 overflow-y-auto bg-gray-900 space-y-4 flex-1">
             <div class="message-enter flex gap-2">
                 <div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">
@@ -383,10 +369,9 @@
             </div>
             <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
                 <button onclick="userReply(180, 'Web Rápida (Desde 180€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Oficios/Rápida</button>
-                <button onclick="userReply(350, 'Web Profesional + SEO (Desde 390€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional + SEO</button>
+                <button onclick="userReply(350, 'Web Profesional + SEO', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional</button>
                 <button onclick="userReply(550, 'Tienda Online (Desde 550€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
             </div>
-            
             <div id="typingIndicator" class="hidden flex gap-2"><div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none border border-gray-600 flex gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
         </div>
     </div>
@@ -400,12 +385,8 @@
             </p>
         </div>
         <div class="flex gap-3 w-full md:w-auto shrink-0">
-            <button onclick="acceptCookies()" class="flex-1 md:flex-none bg-brand-600 hover:bg-brand-500 text-white py-3 px-6 rounded-xl font-bold text-sm shadow-lg shadow-brand-500/20 transition-all active:scale-95">
-                Aceptar
-            </button>
-            <button onclick="rejectCookies()" class="flex-1 md:flex-none bg-gray-800 border border-gray-600 hover:bg-gray-700 text-gray-300 hover:text-white py-3 px-4 rounded-xl text-sm font-medium transition-all active:scale-95">
-                Rechazar
-            </button>
+            <button onclick="acceptCookies()" class="flex-1 md:flex-none bg-brand-600 hover:bg-brand-500 text-white py-3 px-6 rounded-xl font-bold text-sm shadow-lg shadow-brand-500/20 transition-all active:scale-95">Aceptar</button>
+            <button onclick="rejectCookies()" class="flex-1 md:flex-none bg-gray-800 border border-gray-600 hover:bg-gray-700 text-gray-300 hover:text-white py-3 px-4 rounded-xl text-sm font-medium transition-all active:scale-95">Rechazar</button>
         </div>
     </div>
 
@@ -413,7 +394,7 @@
     <script>
         AOS.init({ duration: 800, once: true });
 
-        // MENÚ MÓVIL (Drop Down)
+        // MENÚ MÓVIL
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const icon = mobileBtn.querySelector('i');
@@ -436,19 +417,15 @@
             }
         }
 
-        window.addEventListener('scroll', () => {
-            if (isMenuOpen) toggleMenu();
-        });
+        window.addEventListener('scroll', () => { if (isMenuOpen) toggleMenu(); });
 
-        // LÓGICA CHAT (RESET FIX + PRECIOS COHERENTES)
+        // LÓGICA CHAT
         let presupuesto = 0;
         let resumen = "";
         const chatBody = document.getElementById('chatBody');
         let typingIndicator = document.getElementById('typingIndicator');
 
-        function toggleChat() {
-            document.getElementById('chatWindow').classList.toggle('hidden');
-        }
+        function toggleChat() { document.getElementById('chatWindow').classList.toggle('hidden'); }
 
         function resetChat() {
             presupuesto = 0;
@@ -473,7 +450,6 @@
             chatBody.appendChild(typingIndicator);
             typingIndicator.classList.remove('hidden');
             chatBody.scrollTop = chatBody.scrollHeight;
-
             setTimeout(() => {
                 typingIndicator.classList.add('hidden');
                 const div = document.createElement('div');
@@ -509,8 +485,7 @@
                     chatBody.insertBefore(div.firstElementChild, typingIndicator);
                     chatBody.scrollTop = chatBody.scrollHeight;
                 }, 700);
-            } 
-            else if (step === 2) {
+            } else if (step === 2) {
                 botType("Entendido. <strong>¿Quieres salir en Google (SEO)?</strong>");
                 setTimeout(() => {
                     const options = `
@@ -548,11 +523,8 @@
                     <div class="mt-4 text-center message-enter">
                         <div class="text-3xl font-bold text-white mb-2 animate-bounce-short">${msgPrecio}</div>
                         <p class="text-[10px] text-gray-400 mb-2">Al contactar, aceptas la <a href="politica-privacidad.html" class="underline">Política de Privacidad</a>.</p>
-                        <a href="https://wa.me/34600000000?text=${finalMsg}" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg shadow-green-500/30 transition transform hover:scale-105">
-                            <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
-                        </a>
+                        <a href="https://wa.me/34600000000?text=${finalMsg}" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg shadow-green-500/30 transition transform hover:scale-105"><i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp</a>
                     </div>`;
-                
                 const div = document.createElement('div');
                 div.innerHTML = cta;
                 chatBody.appendChild(div);
@@ -560,24 +532,17 @@
             }, 1400);
         }
 
-        // COOKIES FORCE SHOW
+        // COOKIES
         document.addEventListener('DOMContentLoaded', () => {
             if (!localStorage.getItem('cookiesConsent')) {
                 const banner = document.getElementById('cookieBanner');
                 banner.classList.remove('hidden');
-                banner.style.display = 'flex'; // FORCE DISPLAY FLEX
+                banner.style.display = 'flex';
             }
         });
 
-        function acceptCookies() {
-            localStorage.setItem('cookiesConsent', 'accepted');
-            document.getElementById('cookieBanner').style.display = 'none';
-        }
-
-        function rejectCookies() {
-            localStorage.setItem('cookiesConsent', 'rejected');
-            document.getElementById('cookieBanner').style.display = 'none';
-        }
+        function acceptCookies() { localStorage.setItem('cookiesConsent', 'accepted'); document.getElementById('cookieBanner').style.display = 'none'; }
+        function rejectCookies() { localStorage.setItem('cookiesConsent', 'rejected'); document.getElementById('cookieBanner').style.display = 'none'; }
     </script>
 </body>
 </html>
