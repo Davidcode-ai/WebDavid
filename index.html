@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WebDavid | Diseño Web Profesional</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +47,7 @@
                             '100%': { transform: 'translate(0px, 0px) scale(1)' },
                         },
                         'bounce-short': {
-                            '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
+                            '0%, 100%': { transform: 'translateY(-15%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
                             '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
                         }
                     }
@@ -56,7 +56,7 @@
         }
     </script>
     <style>
-        body { background-color: #0B0F19; color: #e2e8f0; overflow-x: hidden; }
+        body { background-color: #0B0F19; color: #e2e8f0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         
         .bg-grid {
             background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
@@ -66,9 +66,9 @@
         }
         
         .glass-card {
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -77,7 +77,7 @@
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
 
-        /* Animación Typing Dots */
+        /* Dots Animados Chat */
         .typing-dot {
             width: 6px;
             height: 6px;
@@ -92,7 +92,6 @@
             40% { transform: scale(1); }
         }
         
-        /* Animación entrada mensajes */
         .message-enter {
             animation: slideIn 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             opacity: 0;
@@ -103,7 +102,7 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-brand-500 selection:text-white">
 
     <nav class="fixed w-full z-50 transition-all duration-300 glass-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,24 +110,29 @@
                 <a href="#" class="font-display font-bold text-2xl tracking-tight text-white flex items-center gap-2 z-50">
                     <span class="text-brand-400">&lt;/&gt;</span> WebDavid
                 </a>
+                
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#portfolio" class="text-gray-400 hover:text-white transition font-medium">Trabajos</a>
-                    <a href="#servicios" class="text-gray-400 hover:text-white transition font-medium">Servicios</a>
-                    <a href="#pricing" class="text-gray-400 hover:text-white transition font-medium">Precios</a>
-                    <a href="https://wa.me/34600000000" class="bg-white text-dark-900 px-6 py-2.5 rounded-full font-bold hover:bg-brand-400 transition hover:scale-105 shadow-lg shadow-brand-500/20">
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition font-medium text-sm uppercase tracking-wider">Trabajos</a>
+                    <a href="#servicios" class="text-gray-400 hover:text-white transition font-medium text-sm uppercase tracking-wider">Servicios</a>
+                    <a href="#pricing" class="text-gray-400 hover:text-white transition font-medium text-sm uppercase tracking-wider">Precios</a>
+                    <a href="https://wa.me/34600000000" class="bg-white text-dark-900 px-6 py-2.5 rounded-full font-bold hover:bg-brand-400 transition hover:scale-105 shadow-lg shadow-brand-500/20 text-sm">
                         Contactar
                     </a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl z-50 focus:outline-none">
+
+                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl z-50 focus:outline-none p-2">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="fixed inset-0 bg-dark-900/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8">
-            <a href="#portfolio" onclick="toggleMenu()" class="text-2xl text-white font-bold hover:text-brand-400">Trabajos</a>
-            <a href="#servicios" onclick="toggleMenu()" class="text-2xl text-white font-bold hover:text-brand-400">Servicios</a>
-            <a href="#pricing" onclick="toggleMenu()" class="text-2xl text-white font-bold hover:text-brand-400">Precios</a>
-            <a href="https://wa.me/34600000000" class="bg-brand-500 text-white px-8 py-3 rounded-full font-bold text-xl shadow-lg">Hablar por WhatsApp</a>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-[#0B0F19] z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col items-center justify-center space-y-8">
+            <a href="#portfolio" onclick="toggleMenu()" class="text-3xl text-white font-bold hover:text-brand-400 font-display">TRABAJOS</a>
+            <a href="#servicios" onclick="toggleMenu()" class="text-3xl text-white font-bold hover:text-brand-400 font-display">SERVICIOS</a>
+            <a href="#pricing" onclick="toggleMenu()" class="text-3xl text-white font-bold hover:text-brand-400 font-display">PRECIOS</a>
+            <a href="https://wa.me/34600000000" class="bg-brand-600 text-white px-8 py-4 rounded-xl font-bold text-xl shadow-lg w-3/4 text-center">
+                <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp
+            </a>
         </div>
     </nav>
 
@@ -138,66 +142,67 @@
         <div class="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
 
         <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800 border border-gray-700 text-xs md:text-sm text-gray-300 mb-6 md:mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-800 border border-gray-700 text-xs md:text-sm text-gray-300 mb-6 md:mb-8">
                 <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                 Webs a Medida o WordPress
             </div>
             
-            <h1 class="font-display text-4xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-tight">
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
                 Tu negocio merece <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">destacar en internet.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">destacar.</span>
             </h1>
             
-            <p class="mt-4 md:mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-8 md:mb-10 leading-relaxed px-2">
-                Ni plantillas rotas ni precios abusivos. Diseño webs rápidas con código puro o autogestionables con WordPress.
+            <p class="mt-4 md:mt-6 max-w-2xl mx-auto text-base md:text-xl text-gray-400 mb-8 md:mb-10 leading-relaxed px-2">
+                Diseño webs rápidas con código puro o autogestionables con WordPress. Sin precios abusivos.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4 px-4">
-                <button onclick="toggleChat()" class="w-full sm:w-auto px-8 py-4 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/25 ring-2 ring-brand-500 ring-offset-2 ring-offset-dark-900">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 px-2">
+                <button onclick="toggleChat()" class="w-full sm:w-auto px-8 py-4 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/25 ring-2 ring-brand-500 ring-offset-2 ring-offset-dark-900 active:scale-95">
                     Calcula tu Presupuesto
                 </button>
-                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-gray-800 text-white border border-gray-700 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2">
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-gray-800 text-white border border-gray-700 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2 active:scale-95">
                     <i class="fa-solid fa-eye"></i> Ver Portfolio
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="bg-dark-800 border-y border-gray-800 py-8 md:py-10 overflow-hidden relative">
+    <section class="bg-dark-800 border-y border-gray-800 py-6 md:py-10 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-4 marquee-mask">
             <div class="flex w-[calc(250px*14)] animate-scroll">
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0"><i class="fa-brands fa-wordpress text-4xl"></i> <span class="font-bold text-xl">WordPress</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-brand-400 transition grayscale hover:grayscale-0"><i class="fa-brands fa-react text-4xl"></i> <span class="font-bold text-xl">React</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-orange-500 transition grayscale hover:grayscale-0"><i class="fa-brands fa-html5 text-4xl"></i> <span class="font-bold text-xl">HTML5</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-pink-500 transition grayscale hover:grayscale-0"><i class="fa-brands fa-elementor text-4xl"></i> <span class="font-bold text-xl">Elementor</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-indigo-400 transition grayscale hover:grayscale-0"><i class="fa-brands fa-stripe text-4xl"></i> <span class="font-bold text-xl">Stripe</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-blue-500 transition grayscale hover:grayscale-0"><i class="fa-brands fa-css3-alt text-4xl"></i> <span class="font-bold text-xl">Tailwind</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0"><i class="fa-brands fa-google text-4xl"></i> <span class="font-bold text-xl">SEO</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0"><i class="fa-brands fa-wordpress text-4xl"></i> <span class="font-bold text-xl">WordPress</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-brand-400 transition grayscale hover:grayscale-0"><i class="fa-brands fa-react text-4xl"></i> <span class="font-bold text-xl">React</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-orange-500 transition grayscale hover:grayscale-0"><i class="fa-brands fa-html5 text-4xl"></i> <span class="font-bold text-xl">HTML5</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-pink-500 transition grayscale hover:grayscale-0"><i class="fa-brands fa-elementor text-4xl"></i> <span class="font-bold text-xl">Elementor</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-indigo-400 transition grayscale hover:grayscale-0"><i class="fa-brands fa-stripe text-4xl"></i> <span class="font-bold text-xl">Stripe</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-blue-500 transition grayscale hover:grayscale-0"><i class="fa-brands fa-css3-alt text-4xl"></i> <span class="font-bold text-xl">Tailwind</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 hover:text-white transition grayscale hover:grayscale-0"><i class="fa-brands fa-google text-4xl"></i> <span class="font-bold text-xl">SEO</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-wordpress text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">WordPress</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-react text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">React</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-html5 text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">HTML5</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-elementor text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">Elementor</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-stripe text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">Stripe</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-css3-alt text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">Tailwind</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-google text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">SEO</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-wordpress text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">WordPress</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-react text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">React</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-html5 text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">HTML5</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-elementor text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">Elementor</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-stripe text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">Stripe</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-css3-alt text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">Tailwind</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 text-gray-500 grayscale opacity-60"><i class="fa-brands fa-google text-3xl md:text-4xl"></i> <span class="font-bold text-lg md:text-xl">SEO</span></div>
             </div>
         </div>
     </section>
 
     <section id="servicios" class="py-16 md:py-24 relative px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">¿Código Puro o WordPress?</h2>
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">¿Código o CMS?</h2>
                 <p class="text-gray-400">Me adapto a lo que necesite tu negocio.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[300px]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-[300px]">
+                
                 <div class="md:col-span-2 bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 relative overflow-hidden group hover:border-brand-500 transition duration-500" data-aos="fade-up">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition text-8xl md:text-9xl text-white"><i class="fa-solid fa-code"></i></div>
+                    <div class="absolute top-0 right-0 p-4 md:p-8 opacity-10 group-hover:opacity-20 transition text-7xl md:text-9xl text-white"><i class="fa-solid fa-code"></i></div>
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Opción A: Código Puro</h3>
-                    <p class="text-gray-400 max-w-md text-sm md:text-base">Si quieres que tu web vuele y no quieres preocuparte de actualizaciones. Programo en HTML/CSS a medida.</p>
+                    <p class="text-gray-400 max-w-md text-sm md:text-base leading-relaxed">Si quieres una web ultra rápida, segura y sin mantenimiento. Programada en HTML/CSS.</p>
                     <div class="mt-6 md:mt-8 flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded border border-green-500/20">Carga en 0.5s</span>
+                        <span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded border border-green-500/20">Carga &lt; 0.5s</span>
                         <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs rounded border border-blue-500/20">0 Mantenimiento</span>
                     </div>
                 </div>
@@ -205,21 +210,21 @@
                 <div class="md:row-span-2 bg-gradient-to-b from-gray-800 to-gray-900 rounded-3xl p-6 md:p-8 border border-gray-700 flex flex-col justify-between hover:border-pink-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center text-white mb-6 text-xl"><i class="fa-brands fa-wordpress"></i></div>
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Opción B: Autogestionable</h3>
-                        <p class="text-gray-400 text-sm md:text-base">¿Quieres cambiar textos o fotos tú mismo? Te instalo WordPress + Elementor.</p>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Opción B: WordPress</h3>
+                        <p class="text-gray-400 text-sm md:text-base leading-relaxed">¿Necesitas blog o cambiar textos tú mismo? Te instalo Panel de Control y Elementor.</p>
                     </div>
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-50 mt-4 grayscale group-hover:grayscale-0 transition w-full object-cover h-32 md:h-auto">
                 </div>
 
                 <div class="bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up">
                     <h3 class="text-lg md:text-xl font-bold text-white mb-2">Google Friendly</h3>
-                    <p class="text-gray-400 text-sm">Estructura optimizada para aparecer en Google.</p>
+                    <p class="text-gray-400 text-sm">Estructura SEO optimizada.</p>
                     <div class="mt-4 text-brand-400 text-2xl"><i class="fa-brands fa-google"></i></div>
                 </div>
 
                 <div class="bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-2">Diseño Móvil</h3>
-                    <p class="text-gray-400 text-sm">El 80% de tus visitas serán desde móvil. Tu web se verá perfecta.</p>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2">100% Móvil</h3>
+                    <p class="text-gray-400 text-sm">Se verá perfecta en iPhone.</p>
                     <div class="mt-4 text-brand-400 text-2xl"><i class="fa-solid fa-mobile-screen"></i></div>
                 </div>
             </div>
@@ -228,29 +233,29 @@
 
     <section id="portfolio" class="py-16 md:py-24 bg-dark-800 px-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-12 text-center">Proyectos Recientes</h2>
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                <div class="group relative" data-aos="zoom-in-up">
-                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900">
-                        <img src="https://via.placeholder.com/800x600/111827/ffffff?text=Web+Inmobiliaria" class="w-full h-64 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-12 text-center">Trabajos</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group relative" data-aos="fade-up">
+                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl">
+                        <img src="https://via.placeholder.com/800x600/111827/ffffff?text=Web+Inmobiliaria" class="w-full h-56 md:h-80 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
                         <div class="p-6">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">Inmobiliaria Deluxe</h3>
-                            <p class="text-gray-400 mt-2 text-sm md:text-base">Web autogestionable para subir propiedades.</p>
-                            <div class="flex flex-wrap gap-2 mt-4">
+                            <h3 class="text-xl font-bold text-white">Inmobiliaria Deluxe</h3>
+                            <p class="text-gray-400 mt-2 text-sm">Web autogestionable con buscador.</p>
+                            <div class="flex gap-2 mt-4">
                                 <span class="text-xs font-mono text-pink-400 bg-pink-400/10 px-2 py-1 rounded">WordPress</span>
                                 <span class="text-xs font-mono text-pink-400 bg-pink-400/10 px-2 py-1 rounded">Elementor</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="group relative" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900">
-                        <img src="https://via.placeholder.com/800x600/0B0F19/ffffff?text=Landing+App" class="w-full h-64 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
+                <div class="group relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl">
+                        <img src="https://via.placeholder.com/800x600/0B0F19/ffffff?text=Landing+App" class="w-full h-56 md:h-80 object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition duration-500">
                         <div class="p-6">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">Lanzamiento App</h3>
-                            <p class="text-gray-400 mt-2 text-sm md:text-base">Landing page de alta velocidad para captar leads.</p>
-                            <div class="flex flex-wrap gap-2 mt-4">
-                                <span class="text-xs font-mono text-brand-400 bg-brand-400/10 px-2 py-1 rounded">HTML5 Puro</span>
+                            <h3 class="text-xl font-bold text-white">Lanzamiento App</h3>
+                            <p class="text-gray-400 mt-2 text-sm">Landing page de alta conversión.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="text-xs font-mono text-brand-400 bg-brand-400/10 px-2 py-1 rounded">HTML5</span>
                                 <span class="text-xs font-mono text-brand-400 bg-brand-400/10 px-2 py-1 rounded">Tailwind</span>
                             </div>
                         </div>
@@ -262,77 +267,67 @@
 
     <section id="pricing" class="py-16 md:py-24 relative overflow-hidden px-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-white mb-4">Planes Flexibles</h2>
-            <p class="text-center text-gray-400 mb-12">Tú eliges: Código para velocidad o CMS para gestión.</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-white mb-4">Planes</h2>
+            <p class="text-center text-gray-400 mb-10">Transparencia total. Sin sorpresas.</p>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-gray-500 transition flex flex-col" data-aos="fade-up">
-                    <div>
-                        <span class="bg-blue-900 text-blue-300 text-xs font-bold px-2 py-1 rounded">RECOMENDADO CÓDIGO</span>
-                        <h3 class="text-xl font-bold text-white mt-4">Landing Page</h3>
-                        <div class="my-4 text-4xl font-bold text-white">190€</div>
-                        <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-400"></i> Programación a medida</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Una sola página</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Carga instantánea</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/34600000000?text=Hola, quiero la Landing en código" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition">Elegir</a>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-gray-800 p-6 md:p-8 rounded-3xl border border-gray-700 flex flex-col" data-aos="fade-up">
+                    <span class="bg-blue-900 text-blue-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">RAPIDEZ</span>
+                    <h3 class="text-xl font-bold text-white">Landing Page</h3>
+                    <div class="my-3 text-4xl font-bold text-white">190€</div>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-400"></i> Código a medida</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> One-Page</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Sin mantenimiento</li>
+                    </ul>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero la Landing en código" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition text-sm font-bold">Elegir</a>
                 </div>
 
-                <div class="bg-gray-800 p-8 rounded-3xl border-2 border-brand-500 relative transform md:-translate-y-4 flex flex-col order-first md:order-none" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-gray-800 p-6 md:p-8 rounded-3xl border-2 border-brand-500 relative flex flex-col md:-translate-y-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">POPULAR</div>
-                    <span class="bg-pink-900 text-pink-300 text-xs font-bold px-2 py-1 rounded w-fit mt-2">WORDPRESS</span>
-                    <h3 class="text-xl font-bold text-white mt-2">Web Corporativa</h3>
-                    <div class="my-4 text-4xl font-bold text-white">350€</div>
-                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-pen-to-square text-brand-400"></i> Autogestionable</li>
+                    <span class="bg-pink-900 text-pink-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">GESTIONABLE</span>
+                    <h3 class="text-xl font-bold text-white">Web Corporativa</h3>
+                    <div class="my-3 text-4xl font-bold text-white">350€</div>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-6">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-pen-to-square text-brand-400"></i> WordPress Panel</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Hasta 5 secciones</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Blog / Noticias</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Blog Incluido</li>
                     </ul>
-                    <a href="https://wa.me/34600000000?text=Hola, quiero la Web Corporativa en WP" class="mt-auto block text-center w-full py-3 bg-brand-500 rounded-xl text-white font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/30">Elegir</a>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero la Web Corporativa" class="mt-auto block text-center w-full py-3 bg-brand-500 rounded-xl text-white font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/30 text-sm">Elegir</a>
                 </div>
 
-                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-gray-500 transition flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <span class="bg-purple-900 text-purple-300 text-xs font-bold px-2 py-1 rounded w-fit">ECOMMERCE</span>
-                    <h3 class="text-xl font-bold text-white mt-4">Tienda Online</h3>
-                    <div class="my-4 text-4xl font-bold text-white">Consultar</div>
-                    <ul class="space-y-3 text-gray-300 text-sm mb-8">
+                <div class="bg-gray-800 p-6 md:p-8 rounded-3xl border border-gray-700 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <span class="bg-purple-900 text-purple-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">VENTAS</span>
+                    <h3 class="text-xl font-bold text-white">Tienda Online</h3>
+                    <div class="my-3 text-4xl font-bold text-white">Consultar</div>
+                    <ul class="space-y-3 text-gray-300 text-sm mb-6">
                         <li class="flex items-center gap-2"><i class="fa-brands fa-wordpress text-brand-400"></i> WooCommerce</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Catálogo de productos</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Pasarela de pagos</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Catálogo</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Pagos Tarjeta</li>
                     </ul>
-                    <a href="https://wa.me/34600000000?text=Hola, quiero una Tienda Online" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition">Contactar</a>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero una Tienda Online" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition text-sm font-bold">Contactar</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="border-t border-gray-800 bg-dark-900 py-12 px-4">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto text-center md:text-left">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
                     <h2 class="text-2xl font-bold text-white mb-4">WebDavid.es</h2>
-                    <p class="text-gray-400 text-sm max-w-xs">Diseño y desarrollo web a medida para negocios que buscan resultados reales.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Servicios</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="#servicios" class="hover:text-brand-400">Desarrollo Web</a></li>
-                        <li><a href="#servicios" class="hover:text-brand-400">WordPress</a></li>
-                        <li><a href="#servicios" class="hover:text-brand-400">Tiendas Online</a></li>
-                    </ul>
+                    <p class="text-gray-400 text-sm">Diseño y desarrollo web freelance.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4">Legal</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="aviso-legal.html" class="hover:text-brand-400">Aviso Legal</a></li>
-                        <li><a href="politica-privacidad.html" class="hover:text-brand-400">Política de Privacidad</a></li>
-                        <li><a href="politica-cookies.html" class="hover:text-brand-400">Política de Cookies</a></li>
+                        <li><a href="politica-privacidad.html" class="hover:text-brand-400">Privacidad</a></li>
+                        <li><a href="politica-cookies.html" class="hover:text-brand-400">Cookies</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <div class="border-t border-gray-800 pt-8 text-gray-500 text-xs md:text-sm">
                 <p>© 2026 WebDavid. Todos los derechos reservados.</p>
             </div>
         </div>
@@ -343,8 +338,9 @@
         <i class="fa-solid fa-xmark text-2xl hidden group-hover:block"></i>
     </button>
 
-    <div id="chatWindow" class="fixed bottom-24 right-6 w-[90%] md:w-96 max-w-[380px] bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 z-50 hidden transform transition-all origin-bottom-right">
-        <div class="bg-brand-600 p-4 rounded-t-2xl flex justify-between items-center">
+    <div id="chatWindow" class="fixed bottom-24 left-4 right-4 md:left-auto md:right-6 md:w-96 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 z-50 hidden transform transition-all origin-bottom-right flex flex-col max-h-[60vh] md:max-h-[500px]">
+        
+        <div class="bg-brand-600 p-4 rounded-t-2xl flex justify-between items-center shrink-0">
             <div class="flex items-center gap-3">
                 <div class="relative">
                     <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 font-bold">D</div>
@@ -355,28 +351,24 @@
                     <p class="text-blue-100 text-xs">Calcula tu precio</p>
                 </div>
             </div>
-            <button onclick="resetChat()" class="text-white hover:text-blue-200 transition" title="Reiniciar chat">
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
+            <button onclick="resetChat()" class="text-white hover:text-blue-200 transition p-2"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
 
-        <div id="chatBody" class="p-4 h-80 overflow-y-auto bg-gray-900 space-y-4">
+        <div id="chatBody" class="p-4 overflow-y-auto bg-gray-900 space-y-4 flex-1">
             <div class="message-enter flex gap-2">
                 <div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">
-                    👋 ¡Hola! ¿Quieres saber cuánto cuesta digitalizar tu negocio hoy mismo?
+                    👋 ¡Hola! ¿Calculamos un precio para tu web?
                 </div>
             </div>
             <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
-                <button onclick="userReply(190, 'Landing Page (Código)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🚀 Web Rápida (Landing)</button>
-                <button onclick="userReply(350, 'Corporativa (WordPress)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🏢 Web Corporativa</button>
-                <button onclick="userReply(0, 'Tienda Online', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🛍️ Tienda Online</button>
+                <button onclick="userReply(190, 'Landing Page (Código)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Rápida (190€)</button>
+                <button onclick="userReply(350, 'Corporativa (WordPress)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Corporativa (350€)</button>
+                <button onclick="userReply(0, 'Tienda Online', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
             </div>
             
             <div id="typingIndicator" class="hidden flex gap-2">
                 <div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none border border-gray-600 flex gap-1">
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
                 </div>
             </div>
         </div>
@@ -425,7 +417,7 @@
             }
         }
 
-        // LÓGICA CHAT AVANZADA (RESET + TYPING)
+        // LÓGICA CHAT
         let presupuesto = 0;
         let resumen = "";
         const chatBody = document.getElementById('chatBody');
@@ -435,7 +427,6 @@
             document.getElementById('chatWindow').classList.toggle('hidden');
         }
 
-        // Función para Resetear el Chat
         function resetChat() {
             presupuesto = 0;
             resumen = "";
@@ -446,17 +437,15 @@
                     </div>
                 </div>
                 <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
-                    <button onclick="userReply(190, 'Landing Page (Código)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🚀 Web Rápida (Landing)</button>
-                    <button onclick="userReply(350, 'Corporativa (WordPress)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🏢 Web Corporativa</button>
-                    <button onclick="userReply(0, 'Tienda Online', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🛍️ Tienda Online</button>
+                    <button onclick="userReply(190, 'Landing Page (Código)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Rápida (190€)</button>
+                    <button onclick="userReply(350, 'Corporativa (WordPress)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Corporativa (350€)</button>
+                    <button onclick="userReply(0, 'Tienda Online', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
                 </div>
                 <div id="typingIndicator" class="hidden flex gap-2"><div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none border border-gray-600 flex gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
             `;
         }
 
-        // Simula la escritura del bot
-        function botType(htmlContent, delay = 800) {
-            // Mover el indicador al final
+        function botType(htmlContent, delay = 600) {
             chatBody.appendChild(typingIndicator);
             typingIndicator.classList.remove('hidden');
             chatBody.scrollTop = chatBody.scrollHeight;
@@ -466,18 +455,15 @@
                 const div = document.createElement('div');
                 div.className = `message-enter flex gap-2`;
                 div.innerHTML = `<div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">${htmlContent}</div>`;
-                chatBody.insertBefore(div, typingIndicator); // Insertar antes del indicador oculto
+                chatBody.insertBefore(div, typingIndicator);
                 chatBody.scrollTop = chatBody.scrollHeight;
             }, delay);
         }
 
-        // Maneja la respuesta del usuario
         function userReply(price, text, step) {
-            // Eliminar opciones anteriores
             const lastOptions = chatBody.querySelector('.flex-col:not(.hidden)');
-            if(lastOptions) lastOptions.remove(); // Ocultar botones viejos
+            if(lastOptions) lastOptions.remove();
 
-            // Mostrar mensaje usuario
             const userDiv = document.createElement('div');
             userDiv.className = `message-enter flex gap-2 justify-end`;
             userDiv.innerHTML = `<div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%]">${text}</div>`;
@@ -486,43 +472,40 @@
             presupuesto += price;
             resumen += `- ${text}\n`;
 
-            // Lógica de pasos (con retraso de escritura)
             if (step === 1) {
-                botType("¡Excelente elección! Ahora dime... <strong>¿Tienes ya el Logotipo y Textos?</strong>");
+                botType("Genial. <strong>¿Tienes ya el Logotipo y los Textos?</strong>");
                 setTimeout(() => {
                     const options = `
                         <div class="flex flex-col gap-2 ml-8 message-enter">
-                            <button onclick="userReply(0, 'Sí, tengo todo listo', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">✅ Sí, lo tengo todo</button>
-                            <button onclick="userReply(100, 'Necesito ayuda con diseño', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">🎨 No, necesito ayuda (+100€)</button>
+                            <button onclick="userReply(0, 'Sí, tengo todo listo', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">✅ Sí, lo tengo todo</button>
+                            <button onclick="userReply(100, 'Necesito ayuda diseño', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🎨 No, necesito ayuda (+100€)</button>
                         </div>`;
                     const div = document.createElement('div');
                     div.innerHTML = options;
                     chatBody.insertBefore(div.firstElementChild, typingIndicator);
                     chatBody.scrollTop = chatBody.scrollHeight;
-                }, 900); // Aparece justo después del mensaje del bot
+                }, 700);
             } 
             else if (step === 2) {
-                botType("Entendido. Última pregunta: <strong>¿Quieres que tus clientes te encuentren en Google (SEO)?</strong>");
+                botType("Entendido. <strong>¿Quieres salir en Google (SEO)?</strong>");
                 setTimeout(() => {
                     const options = `
                         <div class="flex flex-col gap-2 ml-8 message-enter">
-                            <button onclick="finishChat(50, 'Sí, quiero vender más (SEO)')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">📈 Sí, quiero posicionarme (+50€)</button>
-                            <button onclick="finishChat(0, 'No por ahora')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-2 px-3 rounded-lg text-left transition hover:translate-x-1">💨 No, solo la web</button>
+                            <button onclick="finishChat(50, 'Sí, quiero SEO')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">📈 Sí, posicionarme (+50€)</button>
+                            <button onclick="finishChat(0, 'No por ahora')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">💨 No, solo la web</button>
                         </div>`;
                     const div = document.createElement('div');
                     div.innerHTML = options;
                     chatBody.insertBefore(div.firstElementChild, typingIndicator);
                     chatBody.scrollTop = chatBody.scrollHeight;
-                }, 900);
+                }, 700);
             }
         }
 
         function finishChat(price, text) {
-            // Eliminar opciones anteriores
             const lastOptions = chatBody.querySelector('.flex-col:not(.hidden)');
             if(lastOptions) lastOptions.remove();
 
-            // Mensaje usuario
             const userDiv = document.createElement('div');
             userDiv.className = `message-enter flex gap-2 justify-end`;
             userDiv.innerHTML = `<div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-none text-sm max-w-[85%]">${text}</div>`;
@@ -531,10 +514,8 @@
             presupuesto += price;
             resumen += `- ${text}`;
 
-            // Bot calculando...
-            botType(`Perfecto. Estoy generando tu presupuesto estimado...`, 600);
+            botType(`Calculando presupuesto...`, 600);
             
-            // Resultado final
             setTimeout(() => {
                 let msgPrecio = presupuesto > 0 ? `${presupuesto}€` : "A consultar";
                 const finalMsg = `Hola David, quiero empezar mi proyecto:%0A${encodeURIComponent(resumen)}%0A----------------%0APrecio estimado: ${msgPrecio}`;
@@ -544,19 +525,18 @@
                         <div class="text-3xl font-bold text-white mb-2 animate-bounce-short">${msgPrecio}</div>
                         <p class="text-[10px] text-gray-400 mb-2">Al contactar, aceptas la <a href="politica-privacidad.html" class="underline">Política de Privacidad</a>.</p>
                         <a href="https://wa.me/34600000000?text=${finalMsg}" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg shadow-green-500/30 transition transform hover:scale-105">
-                            <i class="fa-brands fa-whatsapp"></i> ¡Hagámoslo realidad!
+                            <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
                         </a>
-                        <p class="text-xs text-gray-500 mt-2">Te responderé en menos de 1h.</p>
                     </div>`;
                 
                 const div = document.createElement('div');
                 div.innerHTML = cta;
                 chatBody.appendChild(div);
                 chatBody.scrollTop = chatBody.scrollHeight;
-            }, 2000); // 2 segundos de "tensión" para dar valor al precio
+            }, 1400);
         }
 
-        // COOKIES FAST LOAD
+        // COOKIES
         document.addEventListener('DOMContentLoaded', () => {
             if (!localStorage.getItem('cookiesConsent')) {
                 const banner = document.getElementById('cookieBanner');
