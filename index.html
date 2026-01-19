@@ -374,8 +374,8 @@
             </div>
             <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
                 <button onclick="userReply(180, 'Web Rápida (180€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Oficios/Rápida</button>
-                <button onclick="userReply(390, 'Web Profesional + SEO (390€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional + SEO</button>
-                <button onclick="userReply(0, 'Tienda Online', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
+                <button onclick="userReply(350, 'Web Profesional + SEO', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional</button>
+                <button onclick="userReply(550, 'Tienda Online (desde 550€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
             </div>
             
             <div id="typingIndicator" class="hidden flex gap-2"><div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none border border-gray-600 flex gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
@@ -431,7 +431,7 @@
             if (isMenuOpen) toggleMenu();
         });
 
-        // LÓGICA CHAT (RESET FIX)
+        // LÓGICA CHAT (PRECIOS CORREGIDOS)
         let presupuesto = 0;
         let resumen = "";
         const chatBody = document.getElementById('chatBody');
@@ -452,8 +452,8 @@
                 </div>
                 <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
                     <button onclick="userReply(180, 'Web Rápida (180€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Oficios/Rápida</button>
-                    <button onclick="userReply(390, 'Web Profesional + SEO (390€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional + SEO</button>
-                    <button onclick="userReply(0, 'Tienda Online', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
+                    <button onclick="userReply(350, 'Web Profesional + SEO', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional</button>
+                    <button onclick="userReply(550, 'Tienda Online (desde 550€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🛍️ Tienda Online</button>
                 </div>
                 <div id="typingIndicator" class="hidden flex gap-2"><div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none border border-gray-600 flex gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
             `;
@@ -493,7 +493,7 @@
                     const options = `
                         <div class="flex flex-col gap-2 ml-8 message-enter">
                             <button onclick="userReply(0, 'Sí, tengo todo listo', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">✅ Sí, lo tengo todo</button>
-                            <button onclick="userReply(100, 'Necesito ayuda diseño', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🎨 No, necesito ayuda (+100€)</button>
+                            <button onclick="userReply(100, 'Necesito ayuda diseño', 2)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🎨 No, necesito ayuda</button>
                         </div>`;
                     const div = document.createElement('div');
                     div.innerHTML = options;
@@ -506,7 +506,7 @@
                 setTimeout(() => {
                     const options = `
                         <div class="flex flex-col gap-2 ml-8 message-enter">
-                            <button onclick="finishChat(50, 'Sí, quiero SEO')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">📈 Sí, posicionarme (+50€)</button>
+                            <button onclick="finishChat(40, 'Sí, quiero SEO')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">📈 Sí, posicionarme (+40€)</button>
                             <button onclick="finishChat(0, 'No por ahora')" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">💨 No, solo la web</button>
                         </div>`;
                     const div = document.createElement('div');
@@ -556,7 +556,7 @@
             if (!localStorage.getItem('cookiesConsent')) {
                 const banner = document.getElementById('cookieBanner');
                 banner.classList.remove('hidden');
-                banner.style.display = 'flex'; // FORCE DISPLAY FLEX
+                banner.style.display = 'flex';
             }
         });
 
