@@ -387,11 +387,12 @@
             if (isMenuOpen) toggleMenu();
         });
 
-        // LÓGICA CHAT
+        // LÓGICA CHAT - ARREGLADA (BUG RESET FIX)
         let presupuesto = 0;
         let resumen = "";
         const chatBody = document.getElementById('chatBody');
-        const typingIndicator = document.getElementById('typingIndicator');
+        // Usamos 'let' para poder reasignar el indicador tras resetear el HTML
+        let typingIndicator = document.getElementById('typingIndicator');
 
         function toggleChat() {
             document.getElementById('chatWindow').classList.toggle('hidden');
@@ -413,6 +414,8 @@
                 </div>
                 <div id="typingIndicator" class="hidden flex gap-2"><div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none border border-gray-600 flex gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
             `;
+            // IMPORTANTE: Volvemos a capturar el indicador del DOM porque el anterior fue borrado
+            typingIndicator = document.getElementById('typingIndicator');
         }
 
         function botType(htmlContent, delay = 600) {
