@@ -4,45 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>WebDavid | Diseño Web Freelance Profesional y Barato (Desde 180€)</title>
-    <meta name="description" content="Diseño de páginas web modernas, rápidas y económicas para autónomos y PYMES en España. Especialista en WordPress, Tiendas Online y SEO Local. ¡Pide tu presupuesto gratis en 1 minuto!">
-    <meta name="keywords" content="diseño web barato, freelance web españa, crear pagina web wordpress, seo local, tienda online economica, webdavid, programador web">
+    <title>WebDavid | Diseño Web Freelance (Desde 180€)</title>
+    <meta name="description" content="Diseño de páginas web profesionales y económicas en España. Especialista en webs para psicólogos, electricistas y PYMES. ¡Pide presupuesto en 1 min!">
+    <meta name="keywords" content="diseño web barato, programador web freelance, web electricista, web psicologa, seo local, webdavid">
     <meta name="author" content="David - WebDavid.es">
-    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://webdavid.es/">
-
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:type" content="website">
+    
     <meta property="og:title" content="WebDavid | Tu Web Profesional por 180€">
-    <meta property="og:description" content="Deja de perder clientes. Diseño webs que venden. Entra y calcula tu precio al instante.">
+    <meta property="og:description" content="Mira mis proyectos reales. Diseño webs rápidas que posicionan en Google.">
     <meta property="og:url" content="https://webdavid.es/">
-    <meta property="og:site_name" content="WebDavid">
+    <meta property="og:type" content="website">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "WebDavid",
-      "image": "https://webdavid.es/logo.png",
-      "@id": "https://webdavid.es",
       "url": "https://webdavid.es",
-      "telephone": "+34600000000",
       "priceRange": "180€-800€",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ES"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.416775,
-        "longitude": -3.703790
-      },
-      "description": "Servicios de diseño y desarrollo web a medida para pequeños negocios y autónomos. Especialistas en WordPress y SEO.",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
+      "description": "Diseño web a medida y WordPress para negocios locales."
     }
     </script>
     
@@ -55,31 +35,13 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { 
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif']
-                    },
-                    colors: {
-                        dark: { 900: '#0B0F19', 800: '#111827', 700: '#1F2937' },
-                        brand: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' }
-                    },
-                    animation: {
-                        'scroll': 'scroll 30s linear infinite',
-                        'blob': 'blob 7s infinite',
-                        'bounce-short': 'bounce-short 1s infinite',
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'] },
+                    colors: { dark: { 900: '#0B0F19', 800: '#111827', 700: '#1F2937' }, brand: { 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7' } },
+                    animation: { 'scroll': 'scroll 30s linear infinite', 'blob': 'blob 7s infinite', 'bounce-short': 'bounce-short 1s infinite' },
                     keyframes: {
                         'scroll': { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(calc(-250px * 7))' } },
-                        'blob': {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        'bounce-short': {
-                            '0%, 100%': { transform: 'translateY(-15%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
-                            '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
-                        }
+                        'blob': { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } },
+                        'bounce-short': { '0%, 100%': { transform: 'translateY(-15%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' }, '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' } }
                     }
                 }
             }
@@ -130,29 +92,20 @@
     <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-32 overflow-hidden px-4">
         <div class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-brand-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob"></div>
         <div class="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-blob animation-delay-2000"></div>
-
         <div class="max-w-7xl mx-auto text-center" data-aos="fade-up">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-800 border border-gray-700 text-xs md:text-sm text-gray-300 mb-6 md:mb-8">
                 <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                Webs para Electricistas, Psicólogos, Tiendas y PYMES
+                Especialista en Webs para Negocios Locales
             </div>
-            
             <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                Diseño Web que <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">hace crecer tu negocio.</span>
+                Diseño Web que <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-500">vende por ti.</span>
             </h1>
-            
             <p class="mt-4 md:mt-6 max-w-2xl mx-auto text-base md:text-xl text-gray-400 mb-8 md:mb-10 leading-relaxed px-2">
-                <strong>Diseño Web Freelance en España.</strong> Webs rápidas con código puro o autogestionables con WordPress. Calidad de agencia a precio de autónomo.
+                Digitalizo tu negocio. Desde una web rápida para que te llamen, hasta una presencia completa en Google.
             </p>
-
             <div class="flex flex-col sm:flex-row justify-center gap-4 px-2">
-                <button onclick="toggleChat()" class="w-full sm:w-auto px-8 py-4 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/25 ring-2 ring-brand-500 ring-offset-2 ring-offset-dark-900 active:scale-95">
-                    Calcula tu Presupuesto
-                </button>
-                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-gray-800 text-white border border-gray-700 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2 active:scale-95">
-                    <i class="fa-solid fa-eye"></i> Ver Ejemplos
-                </a>
+                <button onclick="toggleChat()" class="w-full sm:w-auto px-8 py-4 bg-brand-500 text-white rounded-xl font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/25 ring-2 ring-brand-500 ring-offset-2 ring-offset-dark-900 active:scale-95">Calcula Presupuesto</button>
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-gray-800 text-white border border-gray-700 rounded-xl font-semibold hover:bg-gray-700 transition flex items-center justify-center gap-2 active:scale-95"><i class="fa-solid fa-eye"></i> Ver Ejemplos</a>
             </div>
         </div>
     </section>
@@ -160,20 +113,16 @@
     <section class="bg-dark-800 border-y border-gray-800 py-6 md:py-10 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-4 marquee-mask">
             <div class="flex w-[calc(250px*14)] animate-scroll">
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-html5 text-4xl md:text-5xl text-orange-500"></i> <span class="font-bold text-lg md:text-xl text-gray-300">HTML5</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-wordpress text-4xl md:text-5xl text-white"></i> <span class="font-bold text-lg md:text-xl text-gray-300">WordPress</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-css3-alt text-4xl md:text-5xl text-blue-500"></i> <span class="font-bold text-lg md:text-xl text-gray-300">CSS3</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-js text-4xl md:text-5xl text-yellow-400"></i> <span class="font-bold text-lg md:text-xl text-gray-300">JavaScript</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-elementor text-4xl md:text-5xl text-[#E9286D]"></i> <span class="font-bold text-lg md:text-xl text-gray-300">Elementor</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-stripe text-4xl md:text-5xl text-[#635BFF]"></i> <span class="font-bold text-lg md:text-xl text-gray-300">Stripe</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-google text-4xl md:text-5xl text-white"></i> <span class="font-bold text-lg md:text-xl text-gray-300">SEO</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-html5 text-4xl md:text-5xl text-orange-500"></i> <span class="font-bold text-lg md:text-xl text-gray-300">HTML5</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-wordpress text-4xl md:text-5xl text-white"></i> <span class="font-bold text-lg md:text-xl text-gray-300">WordPress</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-css3-alt text-4xl md:text-5xl text-blue-500"></i> <span class="font-bold text-lg md:text-xl text-gray-300">CSS3</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-js text-4xl md:text-5xl text-yellow-400"></i> <span class="font-bold text-lg md:text-xl text-gray-300">JavaScript</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-elementor text-4xl md:text-5xl text-[#E9286D]"></i> <span class="font-bold text-lg md:text-xl text-gray-300">Elementor</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-stripe text-4xl md:text-5xl text-[#635BFF]"></i> <span class="font-bold text-lg md:text-xl text-gray-300">Stripe</span></div>
-                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition-transform duration-300"><i class="fa-brands fa-google text-4xl md:text-5xl text-white"></i> <span class="font-bold text-lg md:text-xl text-gray-300">SEO</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-html5 text-5xl text-orange-500"></i> <span class="font-bold text-xl text-gray-300">HTML5</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-wordpress text-5xl text-white"></i> <span class="font-bold text-xl text-gray-300">WordPress</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-css3-alt text-5xl text-blue-500"></i> <span class="font-bold text-xl text-gray-300">CSS3</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-elementor text-5xl text-[#E9286D]"></i> <span class="font-bold text-xl text-gray-300">Elementor</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-google text-5xl text-white"></i> <span class="font-bold text-xl text-gray-300">SEO</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-html5 text-5xl text-orange-500"></i> <span class="font-bold text-xl text-gray-300">HTML5</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-wordpress text-5xl text-white"></i> <span class="font-bold text-xl text-gray-300">WordPress</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-css3-alt text-5xl text-blue-500"></i> <span class="font-bold text-xl text-gray-300">CSS3</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-elementor text-5xl text-[#E9286D]"></i> <span class="font-bold text-xl text-gray-300">Elementor</span></div>
+                <div class="w-[250px] flex justify-center items-center gap-3 hover:scale-110 transition"><i class="fa-brands fa-google text-5xl text-white"></i> <span class="font-bold text-xl text-gray-300">SEO</span></div>
             </div>
         </div>
     </section>
@@ -200,16 +149,16 @@
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Opción B: WordPress</h3>
                         <p class="text-gray-400 text-sm md:text-base leading-relaxed">¿Necesitas blog o cambiar textos tú mismo? Te instalo Panel de Control y Elementor.</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-50 mt-4 grayscale group-hover:grayscale-0 transition w-full object-cover h-32 md:h-auto" alt="Panel de control WordPress" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl opacity-50 mt-4 grayscale group-hover:grayscale-0 transition w-full object-cover h-32 md:h-auto" alt="Wordpress Panel" loading="lazy">
                 </div>
                 <div class="bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up">
                     <h3 class="text-lg md:text-xl font-bold text-white mb-2">Google Friendly</h3>
-                    <p class="text-gray-400 text-sm">Estructura SEO optimizada para que te encuentren.</p>
+                    <p class="text-gray-400 text-sm">Estructura SEO optimizada.</p>
                     <div class="mt-4 text-brand-400 text-2xl"><i class="fa-brands fa-google"></i></div>
                 </div>
                 <div class="bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-700 hover:border-brand-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-lg md:text-xl font-bold text-white mb-2">100% Móvil</h3>
-                    <p class="text-gray-400 text-sm">Se verá perfecta en iPhone y Android.</p>
+                    <p class="text-gray-400 text-sm">Se verá perfecta en iPhone.</p>
                     <div class="mt-4 text-brand-400 text-2xl"><i class="fa-solid fa-mobile-screen"></i></div>
                 </div>
             </div>
@@ -218,86 +167,93 @@
 
     <section id="portfolio" class="py-16 md:py-24 bg-dark-800 px-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-12 text-center">Clientes Satisfechos</h2>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-12 text-center">Proyectos Reales</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="group relative" data-aos="fade-up">
-                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500" alt="Diseño web para electricista" loading="lazy">
+                
+                <a href="https://www.averiascadiz.es" target="_blank" class="group relative block" data-aos="fade-up">
+                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <img src="electricista.png" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500" alt="Web Averias Cadiz Electricista" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
-                        <div class="absolute bottom-0 left-0 p-6">
-                            <h3 class="text-xl font-bold text-white">Electricidad Urgente 24h</h3>
-                            <p class="text-gray-300 mt-1 text-sm">Web rápida con botón de llamada inmediata.</p>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">Averías Cádiz</h3>
+                                    <p class="text-gray-300 mt-1 text-sm">Web Urgencias Electricidad</p>
+                                </div>
+                                <span class="text-brand-400 text-xs font-bold border border-brand-400 px-2 py-1 rounded hover:bg-brand-400 hover:text-white transition">Visitar ↗</span>
+                            </div>
                             <div class="flex gap-2 mt-3">
-                                <span class="text-xs font-mono text-brand-400 bg-brand-400/20 px-2 py-1 rounded border border-brand-400/30">HTML5</span>
-                                <span class="text-xs font-mono text-green-400 bg-green-400/20 px-2 py-1 rounded border border-green-400/30">Google Maps</span>
+                                <span class="text-xs font-mono text-gray-400 bg-gray-800 px-2 py-1 rounded">HTML5</span>
+                                <span class="text-xs font-mono text-gray-400 bg-gray-800 px-2 py-1 rounded">SEO Local</span>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="group relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500" alt="Web para clínica de psicología" loading="lazy">
+                </a>
+
+                <a href="https://www.etnapsicologia.com" target="_blank" class="group relative block" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <img src="etnapsicologia.png" class="w-full h-56 md:h-80 object-cover opacity-80 group-hover:opacity-100 transition duration-500" alt="Web Etna Psicologia" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
-                        <div class="absolute bottom-0 left-0 p-6">
-                            <h3 class="text-xl font-bold text-white">Clínica Psicología</h3>
-                            <p class="text-gray-300 mt-1 text-sm">Blog de artículos y posicionamiento SEO local.</p>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition">Etna Psicología</h3>
+                                    <p class="text-gray-300 mt-1 text-sm">Web Corporativa + Blog</p>
+                                </div>
+                                <span class="text-brand-400 text-xs font-bold border border-brand-400 px-2 py-1 rounded hover:bg-brand-400 hover:text-white transition">Visitar ↗</span>
+                            </div>
                             <div class="flex gap-2 mt-3">
-                                <span class="text-xs font-mono text-pink-400 bg-pink-400/20 px-2 py-1 rounded border border-pink-400/30">WordPress</span>
-                                <span class="text-xs font-mono text-white bg-white/20 px-2 py-1 rounded border border-white/30">SEO</span>
+                                <span class="text-xs font-mono text-gray-400 bg-gray-800 px-2 py-1 rounded">WordPress</span>
+                                <span class="text-xs font-mono text-gray-400 bg-gray-800 px-2 py-1 rounded">Elementor</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
+
             </div>
         </div>
     </section>
 
     <section id="pricing" class="py-16 md:py-24 relative overflow-hidden px-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-white mb-4">Planes para cada necesidad</h2>
-            <p class="text-center text-gray-400 mb-10">Desde una tarjeta de visita digital hasta un negocio completo.</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-white mb-4">Planes Transparentes</h2>
+            <p class="text-center text-gray-400 mb-10">Invierte en tu negocio, no gastes en humo.</p>
 
             <div class="grid md:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-gray-800 p-6 md:p-8 rounded-3xl border border-gray-700 flex flex-col" data-aos="fade-up">
-                    <span class="bg-blue-900 text-blue-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">OFICIOS / LOCALES</span>
+                    <span class="bg-blue-900 text-blue-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">OFICIOS / RÁPIDO</span>
                     <h3 class="text-xl font-bold text-white">Web "Tarjeta"</h3>
-                    <div class="my-3 text-4xl font-bold text-white flex items-baseline gap-1">
-                        <span class="text-lg font-normal text-gray-400">Desde</span> 180€
-                    </div>
-                    <p class="text-xs text-gray-400 mb-4">Ideal Electricistas, Reformas, Fontaneros...</p>
+                    <div class="my-3 text-4xl font-bold text-white flex items-baseline gap-1"><span class="text-lg font-normal text-gray-400">Desde</span> 180€</div>
+                    <p class="text-xs text-gray-400 mb-4">Ideal Reformas, Fontaneros, Urgencias...</p>
                     <ul class="space-y-3 text-gray-300 text-sm mb-6">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-400"></i> Carga Ultra Rápida</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Botón "Llamar Ahora"</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Ubicación Mapa</li>
                     </ul>
                     <p class="text-[10px] text-gray-500 mb-4 italic">* Hosting y Dominio no incluidos</p>
-                    <a href="https://wa.me/34600000000?text=Hola, soy un profesional y quiero una web rápida" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition text-sm font-bold">Empezar</a>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero la Web Rápida de 180" class="mt-auto block text-center w-full py-3 border border-gray-600 rounded-xl text-white hover:bg-gray-700 transition text-sm font-bold">Empezar</a>
                 </div>
 
                 <div class="bg-gray-800 p-6 md:p-8 rounded-3xl border-2 border-brand-500 relative flex flex-col md:-translate-y-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">RECOMENDADO</div>
+                    <div class="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">POPULAR</div>
                     <span class="bg-pink-900 text-pink-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">PROFESIONAL + SEO</span>
                     <h3 class="text-xl font-bold text-white">Web Negocio</h3>
-                    <div class="my-3 text-4xl font-bold text-white flex items-baseline gap-1">
-                        <span class="text-lg font-normal text-gray-400">Desde</span> 390€
-                    </div>
-                    <p class="text-xs text-gray-400 mb-4">Ideal Psicólogos, Abogados, Clínicas...</p>
+                    <div class="my-3 text-4xl font-bold text-white flex items-baseline gap-1"><span class="text-lg font-normal text-gray-400">Desde</span> 390€</div>
+                    <p class="text-xs text-gray-400 mb-4">Ideal Psicólogos, Clínicas, Abogados...</p>
                     <ul class="space-y-3 text-gray-300 text-sm mb-6">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-400"></i> <strong>SEO Básico Incluido</strong></li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-pen-nib text-brand-400"></i> Blog para Artículos</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Autogestionable (WordPress)</li>
                     </ul>
                     <p class="text-[10px] text-gray-500 mb-4 italic">* Hosting y Dominio no incluidos</p>
-                    <a href="https://wa.me/34600000000?text=Hola, quiero una Web Profesional con SEO" class="mt-auto block text-center w-full py-3 bg-brand-500 rounded-xl text-white font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/30 text-sm">Quiero Vender Más</a>
+                    <a href="https://wa.me/34600000000?text=Hola, quiero la Web Profesional de 390" class="mt-auto block text-center w-full py-3 bg-brand-500 rounded-xl text-white font-bold hover:bg-brand-400 transition shadow-lg shadow-brand-500/30 text-sm">Quiero Vender Más</a>
                 </div>
 
                 <div class="bg-gray-800 p-6 md:p-8 rounded-3xl border border-gray-700 flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <span class="bg-purple-900 text-purple-300 text-xs font-bold px-2 py-1 rounded w-fit mb-2">VENTA PRODUCTOS</span>
                     <h3 class="text-xl font-bold text-white">Tienda Online</h3>
-                    <div class="my-3 text-4xl font-bold text-white flex items-baseline gap-1">
-                        <span class="text-lg font-normal text-gray-400">Desde</span> 550€
-                    </div>
-                    <p class="text-xs text-gray-400 mb-4">Para vender ropa, artesanía, cursos...</p>
+                    <div class="my-3 text-4xl font-bold text-white flex items-baseline gap-1"><span class="text-lg font-normal text-gray-400">Desde</span> 550€</div>
+                    <p class="text-xs text-gray-400 mb-4">Vende ropa, artesanía, cursos...</p>
                     <ul class="space-y-3 text-gray-300 text-sm mb-6">
                         <li class="flex items-center gap-2"><i class="fa-brands fa-wordpress text-brand-400"></i> WooCommerce</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Pasarela de Pagos</li>
@@ -315,9 +271,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
                 <div class="text-center md:text-left">
                     <span class="text-2xl font-bold text-white block mb-4">WebDavid.es</span>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
-                        Ayudando a autónomos y pequeños negocios a tener una presencia digital profesional sin arruinarse.
-                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">Diseño y desarrollo web a medida para negocios que buscan resultados reales.</p>
                 </div>
                 <div class="text-center">
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Servicios</h4>
@@ -336,9 +290,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-600 text-xs">© 2026 WebDavid - Todos los derechos reservados.</p>
-            </div>
+            <div class="border-t border-gray-800 pt-8 text-center"><p class="text-gray-600 text-xs">© 2026 WebDavid - Todos los derechos reservados.</p></div>
         </div>
     </footer>
 
@@ -350,23 +302,13 @@
     <div id="chatWindow" class="fixed bottom-24 left-4 right-4 md:left-auto md:right-6 md:w-96 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700 z-50 hidden transform transition-all origin-bottom-right flex flex-col max-h-[60vh] md:max-h-[500px]">
         <div class="bg-brand-600 p-4 rounded-t-2xl flex justify-between items-center shrink-0">
             <div class="flex items-center gap-3">
-                <div class="relative">
-                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 font-bold">D</div>
-                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-brand-600 rounded-full"></div>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold text-sm">David - Web Designer</h4>
-                    <p class="text-blue-100 text-xs">Calcula tu precio</p>
-                </div>
+                <div class="relative"><div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 font-bold">D</div><div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-brand-600 rounded-full"></div></div>
+                <div><h4 class="text-white font-bold text-sm">David - Web Designer</h4><p class="text-blue-100 text-xs">Calcula tu precio</p></div>
             </div>
             <button onclick="resetChat()" class="text-white hover:text-blue-200 transition p-2"><i class="fa-solid fa-rotate-right"></i></button>
         </div>
         <div id="chatBody" class="p-4 overflow-y-auto bg-gray-900 space-y-4 flex-1">
-            <div class="message-enter flex gap-2">
-                <div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">
-                    👋 ¡Hola! ¿Calculamos un precio para tu web?
-                </div>
-            </div>
+            <div class="message-enter flex gap-2"><div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">👋 ¡Hola! ¿Calculamos un precio para tu web?</div></div>
             <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
                 <button onclick="userReply(180, 'Web Rápida (Desde 180€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Oficios/Rápida</button>
                 <button onclick="userReply(350, 'Web Profesional + SEO', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional</button>
@@ -379,14 +321,11 @@
     <div id="cookieBanner" class="fixed bottom-0 left-0 w-full z-[10000] bg-gray-900 border-t border-gray-700 p-6 shadow-2xl hidden flex-col md:flex-row items-center gap-4 justify-between pb-8 md:pb-6 md:rounded-t-2xl md:left-auto md:right-4 md:w-auto md:max-w-xl md:bottom-4 md:border">
         <div class="flex items-start gap-4 w-full">
             <span class="text-3xl animate-bounce">🍪</span>
-            <p class="text-gray-300 text-sm leading-relaxed">
-                Usamos cookies para mejorar tu experiencia y analizar el tráfico. 
-                <a href="politica-cookies.html" class="text-brand-400 font-bold hover:underline">Ver Política</a>.
-            </p>
+            <p class="text-gray-300 text-sm leading-relaxed">Usamos cookies para mejorar tu experiencia. <a href="politica-cookies.html" class="text-brand-400 font-bold hover:underline">Política</a>.</p>
         </div>
         <div class="flex gap-3 w-full md:w-auto shrink-0">
-            <button onclick="acceptCookies()" class="flex-1 md:flex-none bg-brand-600 hover:bg-brand-500 text-white py-3 px-6 rounded-xl font-bold text-sm shadow-lg shadow-brand-500/20 transition-all active:scale-95">Aceptar</button>
-            <button onclick="rejectCookies()" class="flex-1 md:flex-none bg-gray-800 border border-gray-600 hover:bg-gray-700 text-gray-300 hover:text-white py-3 px-4 rounded-xl text-sm font-medium transition-all active:scale-95">Rechazar</button>
+            <button onclick="acceptCookies()" class="flex-1 md:flex-none bg-brand-600 hover:bg-brand-500 text-white py-3 px-6 rounded-xl font-bold text-sm shadow-lg shadow-brand-500/20 active:scale-95">Aceptar</button>
+            <button onclick="rejectCookies()" class="flex-1 md:flex-none bg-gray-800 border border-gray-600 hover:bg-gray-700 text-gray-300 hover:text-white py-3 px-4 rounded-xl text-sm font-medium active:scale-95">Rechazar</button>
         </div>
     </div>
 
@@ -416,7 +355,6 @@
                 icon.classList.add('fa-bars');
             }
         }
-
         window.addEventListener('scroll', () => { if (isMenuOpen) toggleMenu(); });
 
         // LÓGICA CHAT
@@ -431,11 +369,7 @@
             presupuesto = 0;
             resumen = "";
             chatBody.innerHTML = `
-                <div class="message-enter flex gap-2">
-                    <div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">
-                        🔄 ¡Empezamos de nuevo! ¿Qué tipo de web tienes en mente?
-                    </div>
-                </div>
+                <div class="message-enter flex gap-2"><div class="bg-gray-700 p-3 rounded-2xl rounded-tl-none text-sm text-gray-200 border border-gray-600 max-w-[85%]">🔄 ¡Empezamos de nuevo! ¿Qué tipo de web tienes en mente?</div></div>
                 <div id="options-start" class="flex flex-col gap-2 ml-8 message-enter" style="animation-delay: 0.1s;">
                     <button onclick="userReply(180, 'Web Rápida (Desde 180€)', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🚀 Web Oficios/Rápida</button>
                     <button onclick="userReply(350, 'Web Profesional + SEO', 1)" class="bg-gray-800 hover:bg-gray-700 border border-gray-600 text-brand-400 text-sm py-3 px-4 rounded-lg text-left transition active:bg-gray-700">🏢 Web Profesional</button>
@@ -485,7 +419,8 @@
                     chatBody.insertBefore(div.firstElementChild, typingIndicator);
                     chatBody.scrollTop = chatBody.scrollHeight;
                 }, 700);
-            } else if (step === 2) {
+            } 
+            else if (step === 2) {
                 botType("Entendido. <strong>¿Quieres salir en Google (SEO)?</strong>");
                 setTimeout(() => {
                     const options = `
