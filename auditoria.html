@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auditoría Web Gratuita | WebDavid — Descubre por qué pierdes clientes en Google</title>
+    <meta name="description" content="¿Tu web local no aparece en Google? Analiza gratis los 2 fallos técnicos que te están haciendo perder dinero. Informe en minutos.">
+    <meta name="author" content="David - WebDavid.es">
+    <link rel="canonical" href="https://webdavid.es/auditoria">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <meta property="og:title" content="Auditoría Web Gratuita — Descubre los fallos que te roban clientes">
+    <meta property="og:description" content="El 80% de las webs locales son lentas y Google las penaliza. Recibe tu informe gratis ahora.">
+    <meta property="og:url" content="https://webdavid.es/auditoria">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CDN: debe ser síncrono porque el inline tailwind.config depende de él -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: preconnect + carga no bloqueante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap"></noscript>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ── Base ── */
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            background-color: #F5F7FA;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ── Accent color: azul eléctrico ── */
+        :root {
+            --accent: #2563EB;
+            --accent-hover: #1D4ED8;
+            --accent-light: #EFF6FF;
+            --accent-ring: rgba(37, 99, 235, 0.25);
+        }
+
+        /* ── Gradient hero background ── */
+        .hero-bg {
+            background: linear-gradient(160deg, #ffffff 0%, #EFF6FF 55%, #DBEAFE 100%);
+        }
+
+        /* ── Trust badge pill ── */
+        .trust-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #DBEAFE;
+            color: #1E40AF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid #BFDBFE;
+        }
+        .trust-pill span.dot {
+            width: 7px; height: 7px;
+            background: #2563EB;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.5; transform: scale(1.4); }
+        }
+
+        /* ── Card form ── */
+        .card {
+            background: #ffffff;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.07), 0 20px 40px -8px rgba(37,99,235,.10);
+            border: 1px solid #E5E7EB;
+        }
+
+        /* ── Inputs ── */
+        .field-wrap { position: relative; }
+        .field-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            pointer-events: none;
+            font-size: 1rem;
+        }
+        input[type="url"],
+        input[type="email"] {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 2.75rem;
+            border: 1.5px solid #D1D5DB;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            color: #111827;
+            background: #F9FAFB;
+            transition: border-color .2s, box-shadow .2s, background .2s;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        input[type="url"]:focus,
+        input[type="email"]:focus {
+            border-color: var(--accent);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px var(--accent-ring);
+        }
+        input::placeholder { color: #9CA3AF; }
+
+        /* ── CTA button ── */
+        .btn-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: var(--accent);
+            color: #ffffff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.0625rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            border: none;
+            border-radius: 0.875rem;
+            cursor: pointer;
+            transition: background .2s, transform .15s, box-shadow .2s;
+            box-shadow: 0 4px 14px -2px rgba(37,99,235,.45);
+            -webkit-tap-highlight-color: transparent;
+        }
+        .btn-cta:hover:not(:disabled) {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -4px rgba(37,99,235,.45);
+        }
+        .btn-cta:active:not(:disabled) { transform: translateY(0); }
+        .btn-cta:disabled {
+            opacity: 0.75;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ── Spinner ── */
+        .spinner {
+            width: 18px; height: 18px;
+            border: 2.5px solid rgba(255,255,255,.3);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+            flex-shrink: 0;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Success state ── */
+        #success-msg {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 2rem 1rem;
+        }
+        .success-icon {
+            width: 60px; height: 60px;
+            background: #D1FAE5;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        /* ── Social proof strip ── */
+        .proof-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .proof-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .proof-label {
+            font-size: 0.8rem;
+            color: #6B7280;
+            text-align: center;
+        }
+
+        /* ── Feature bullets ── */
+        .feature-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .feature-icon {
+            width: 32px; height: 32px;
+            background: var(--accent-light);
+            border-radius: 0.5rem;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        /* ── Footer nav ── */
+        .footer-link { color: #6B7280; font-size: 0.8rem; text-decoration: none; }
+        .footer-link:hover { color: var(--accent); text-decoration: underline; }
+
+        /* ── Responsive helpers ── */
+        @media (min-width: 640px) {
+            .proof-number { font-size: 1.875rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════
+         HERO
+    ════════════════════════════════ -->
+    <section class="hero-bg min-h-screen flex flex-col justify-center px-4 py-16 sm:py-24">
+        <div class="max-w-xl mx-auto w-full">
+
+            <!-- Trust pill -->
+            <div class="mb-6 flex justify-center sm:justify-start">
+                <div class="trust-pill">
+                    <span class="dot"></span>
+                    Servicio 100% gratuito · Sin compromiso
+                </div>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-gray-900 mb-5 text-center sm:text-left">
+                Descubre por qué tu competencia en
+                <span style="color: var(--accent);">La Janda</span>
+                te está robando clientes en Google.
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8 text-center sm:text-left">
+                El <strong class="text-gray-800">80% de las webs locales son lentas</strong> y Google las penaliza.
+                Introduce tu web y te enviamos un informe gratuito con los
+                <strong class="text-gray-800">2 fallos técnicos</strong> que te están haciendo perder dinero.
+            </p>
+
+            <!-- ── FORM CARD ── -->
+            <div class="card p-6 sm:p-8 mb-8">
+
+                <!-- Form -->
+                <form id="audit-form" novalidate>
+                    <div class="flex flex-col gap-4">
+
+                        <!-- URL input -->
+                        <div>
+                            <label for="web-url" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                URL de tu página web
+                            </label>
+                            <div class="field-wrap">
+                                <svg class="field-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                <input
+                                    type="url"
+                                    id="web-url"
+                                    name="url"
+                                    placeholder="https://tuempresa.es"
+                                    required
+                                    autocomplete="url"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Email input -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">
+                                Tu Email
+                            </label>
+                            <div class="field-wrap">
+                                <svg class="field-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tucorreo@empresa.es"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn-cta" id="submit-btn">
+                            <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <span id="btn-text">Analizar mi web gratis ahora</span>
+                        </button>
+
+                        <!-- Legal -->
+                        <p class="text-center text-xs text-gray-400 leading-relaxed">
+                            🔒 Cero spam. Solo te enviaremos tu auditoría.
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Success message (hidden by default) -->
+                <div id="success-msg">
+                    <div class="success-icon">✅</div>
+                    <h2 class="font-display text-xl font-bold text-gray-900">¡Genial! Estamos analizando tu web.</h2>
+                    <p class="text-gray-600 text-sm sm:text-base max-w-sm">
+                        Recibirás el informe en tu correo en unos minutos con los fallos exactos que debes corregir.
+                    </p>
+                    <a href="/" class="text-sm font-medium" style="color: var(--accent);">← Volver a WebDavid.es</a>
+                </div>
+
+            </div>
+
+            <!-- Social proof strip -->
+            <div class="grid grid-cols-3 gap-4 mb-8">
+                <div class="proof-item">
+                    <span class="proof-number">+40</span>
+                    <span class="proof-label">webs locales analizadas</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number">&lt;2 min</span>
+                    <span class="proof-label">tiempo de respuesta</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number">0€</span>
+                    <span class="proof-label">coste para ti</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         QUÉ INCLUYE EL INFORME
+    ════════════════════════════════ -->
+    <section class="bg-white py-16 px-4">
+        <div class="max-w-xl mx-auto w-full">
+
+            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 text-center">Qué encontrarás en tu informe</p>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
+                Dos fallos concretos. Sin tecnicismos.
+            </h2>
+
+            <div class="flex flex-col gap-5">
+                <div class="feature-row">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                        <p class="font-semibold text-gray-900 text-sm sm:text-base">Velocidad de carga</p>
+                        <p class="text-gray-500 text-sm mt-0.5">Una web lenta pierde el 53 % de visitantes móviles. Google lo penaliza directamente en el ranking.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-icon">📍</div>
+                    <div>
+                        <p class="font-semibold text-gray-900 text-sm sm:text-base">SEO Local</p>
+                        <p class="text-gray-500 text-sm mt-0.5">Sin las etiquetas correctas, Google no sabe que existes en tu zona. Tu competencia sí las tiene.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <p class="font-semibold text-gray-900 text-sm sm:text-base">Adaptación móvil</p>
+                        <p class="text-gray-500 text-sm mt-0.5">El 70 % de tus clientes potenciales llegan desde el móvil. Si la web no se ve bien, se van.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         CTA FINAL
+    ════════════════════════════════ -->
+    <section style="background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);" class="py-16 px-4">
+        <div class="max-w-xl mx-auto w-full text-center text-white">
+            <p class="text-blue-200 text-sm font-semibold uppercase tracking-widest mb-3">Gratis. Sin trucos.</p>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold mb-4">¿Cuántos clientes más estás perdiendo hoy?</h2>
+            <p class="text-blue-100 text-base mb-8 max-w-sm mx-auto">Cada día que tu web tiene fallos técnicos es un día que tu competencia te roba posiciones.</p>
+            <a href="#audit-form" onclick="document.getElementById('web-url').focus()" class="inline-flex items-center gap-2 bg-white text-blue-700 font-display font-bold text-base px-7 py-3.5 rounded-xl shadow-lg transition hover:shadow-xl hover:-translate-y-0.5" style="text-decoration:none;">
+                Analizar mi web ahora →
+            </a>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         FOOTER
+    ════════════════════════════════ -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-8 px-4">
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-sm text-gray-400">© 2025 <strong class="text-gray-700">WebDavid.es</strong> · Diseño web para negocios locales</span>
+            <nav class="flex gap-5">
+                <a href="/politica-privacidad.html" class="footer-link">Privacidad</a>
+                <a href="/aviso-legal.html" class="footer-link">Aviso legal</a>
+                <a href="/politica-cookies.html" class="footer-link">Cookies</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════
+         JAVASCRIPT
+    ════════════════════════════════ -->
+    <script>
+        const WEBHOOK_URL = 'https://hook.eu2.make.com/rayuxd5eehcinc761fa0eu0dch1pabsm';
+
+        const form      = document.getElementById('audit-form');
+        const successEl = document.getElementById('success-msg');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText   = document.getElementById('btn-text');
+        const btnIcon   = document.getElementById('btn-icon');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const url   = document.getElementById('web-url').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // Client-side validation fallback
+            if (!url || !email) return;
+
+            // Loading state
+            submitBtn.disabled = true;
+            btnIcon.outerHTML  = '<div class="spinner" id="btn-icon"></div>';
+            btnText.textContent = 'Analizando…';
+
+            try {
+                await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, email, source: 'auditoria-webdavid' })
+                });
+            } catch (_) {
+                // Even on network error we show success to avoid frustrating the user
+                // (Make.com sometimes returns CORS but still processes the webhook)
+            } finally {
+                // Show success
+                form.style.display = 'none';
+                successEl.style.display = 'flex';
+            }
+        });
+    </script>
+
+</body>
+</html>
