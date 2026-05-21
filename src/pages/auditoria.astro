@@ -1,50 +1,28 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth overflow-x-hidden">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-    <title>Auditoría Web Gratuita | WebDavid — Descubre por qué pierdes clientes en Google</title>
-    <meta name="description" content="¿Tu web local no aparece en Google? Analiza gratis los 2 fallos técnicos que te están haciendo perder dinero. Informe en minutos.">
-    <meta name="author" content="David - WebDavid.es">
-    <link rel="canonical" href="https://webdavid.es/auditoria">
-    <link rel="icon" href="favicon.png" type="image/png">
+<BaseLayout
+  title="Auditoría Web Gratuita | WebDavid — Descubre por qué pierdes clientes en Google"
+  description="¿Tu web local no aparece en Google? Analiza gratis los 2 fallos técnicos que te están haciendo perder dinero. Informe en minutos."
+  canonical="https://webdavid.es/auditoria"
+>
+  <Fragment slot="head">
+    <meta property="og:title" content="Auditoría Web Gratuita — Descubre los fallos que te roban clientes" />
+    <meta property="og:description" content="El 80% de las webs locales son lentas y Google las penaliza. Recibe tu informe gratis ahora." />
+    <meta property="og:url" content="https://webdavid.es/auditoria" />
+    <meta property="og:type" content="website" />
+  </Fragment>
 
-    <meta property="og:title" content="Auditoría Web Gratuita — Descubre los fallos que te roban clientes">
-    <meta property="og:description" content="El 80% de las webs locales son lentas y Google las penaliza. Recibe tu informe gratis ahora.">
-    <meta property="og:url" content="https://webdavid.es/auditoria">
-    <meta property="og:type" content="website">
-
-    <!-- Tailwind CDN: debe ser síncrono porque el inline tailwind.config depende de él -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts: preconnect + carga no bloqueante -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@600;700&display=swap"></noscript>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
+    <style is:global>
         /* ── Base ── */
-        *, *::before, *::after { box-sizing: border-box; }
-        body {
+        .auditoria-page *, .auditoria-page *::before, .auditoria-page *::after { box-sizing: border-box; }
+        .auditoria-page {
             background-color: #F5F7FA;
             color: #111827;
             -webkit-font-smoothing: antialiased;
             font-family: 'Inter', sans-serif;
+            min-height: 100vh;
         }
 
         /* ── Accent color: azul eléctrico ── */
@@ -232,10 +210,8 @@
             .proof-number { font-size: 1.875rem; }
         }
     </style>
-</head>
 
-<body>
-
+    <div class="auditoria-page">
     <!-- ════════════════════════════════
          HERO
     ════════════════════════════════ -->
@@ -410,17 +386,19 @@
         <div class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <span class="text-sm text-gray-400">© 2025 <strong class="text-gray-700">WebDavid.es</strong> · Diseño web para negocios locales</span>
             <nav class="flex gap-5">
-                <a href="/politica-privacidad.html" class="footer-link">Privacidad</a>
-                <a href="/aviso-legal.html" class="footer-link">Aviso legal</a>
-                <a href="/politica-cookies.html" class="footer-link">Cookies</a>
+                <a href="/politica-privacidad" class="footer-link">Privacidad</a>
+                <a href="/aviso-legal" class="footer-link">Aviso legal</a>
+                <a href="/politica-cookies" class="footer-link">Cookies</a>
             </nav>
         </div>
     </footer>
+    </div>
 
     <!-- ════════════════════════════════
          JAVASCRIPT
     ════════════════════════════════ -->
-    <script>
+  <Fragment slot="scripts">
+    <script is:inline>
         const WEBHOOK_URL = 'https://hook.eu2.make.com/rayuxd5eehcinc761fa0eu0dch1pabsm';
 
         const form      = document.getElementById('audit-form');
@@ -459,6 +437,5 @@
             }
         });
     </script>
-
-</body>
-</html>
+  </Fragment>
+</BaseLayout>
