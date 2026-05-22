@@ -401,6 +401,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <script is:inline>
         const WEBHOOK_URL = 'https://hook.eu2.make.com/rayuxd5eehcinc761fa0eu0dch1pabsm';
 
+        const params = new URLSearchParams(window.location.search);
+        const urlFromHero = document.getElementById('web-url');
+        const emailFromHero = document.getElementById('email');
+        if (params.get('url')) urlFromHero.value = decodeURIComponent(params.get('url'));
+        if (params.get('email')) emailFromHero.value = decodeURIComponent(params.get('email'));
+
         const form      = document.getElementById('audit-form');
         const successEl = document.getElementById('success-msg');
         const submitBtn = document.getElementById('submit-btn');
