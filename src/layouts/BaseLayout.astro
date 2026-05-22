@@ -30,35 +30,6 @@ const {
   <body class="antialiased selection:bg-brand-500 selection:text-white">
     <slot />
     <slot name="scripts" />
-    <script is:inline>
-      document.addEventListener('DOMContentLoaded', () => {
-        const els = document.querySelectorAll('[data-reveal]');
-        if (!els.length) return;
-
-        const show = (el) => {
-          const delay = Number(el.dataset.revealDelay || 0);
-          setTimeout(() => el.classList.add('is-visible'), delay);
-        };
-
-        if (!('IntersectionObserver' in window)) {
-          els.forEach(show);
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                show(entry.target);
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-        );
-
-        els.forEach((el) => observer.observe(el));
-      });
-    </script>
+    <script src="../scripts/reveal.js"></script>
   </body>
 </html>
