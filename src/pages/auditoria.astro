@@ -394,54 +394,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </footer>
     </div>
 
-    <!-- ════════════════════════════════
-         JAVASCRIPT
-    ════════════════════════════════ -->
   <Fragment slot="scripts">
-    <script>
-        const WEBHOOK_URL = 'https://hook.eu2.make.com/rayuxd5eehcinc761fa0eu0dch1pabsm';
-
-        const params = new URLSearchParams(window.location.search);
-        const urlFromHero = document.getElementById('web-url');
-        const emailFromHero = document.getElementById('email');
-        if (params.get('url')) urlFromHero.value = decodeURIComponent(params.get('url'));
-        if (params.get('email')) emailFromHero.value = decodeURIComponent(params.get('email'));
-
-        const form      = document.getElementById('audit-form');
-        const successEl = document.getElementById('success-msg');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText   = document.getElementById('btn-text');
-        const btnIcon   = document.getElementById('btn-icon');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const url   = document.getElementById('web-url').value.trim();
-            const email = document.getElementById('email').value.trim();
-
-            // Client-side validation fallback
-            if (!url || !email) return;
-
-            // Loading state
-            submitBtn.disabled = true;
-            btnIcon.outerHTML  = '<div class="spinner" id="btn-icon"></div>';
-            btnText.textContent = 'Analizando…';
-
-            try {
-                await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ url, email, source: 'auditoria-webdavid' })
-                });
-            } catch (_) {
-                // Even on network error we show success to avoid frustrating the user
-                // (Make.com sometimes returns CORS but still processes the webhook)
-            } finally {
-                // Show success
-                form.style.display = 'none';
-                successEl.style.display = 'flex';
-            }
-        });
-    </script>
+    <script src="../scripts/auditoria-handler.js"></script>
   </Fragment>
 </BaseLayout>
